@@ -1,0 +1,48 @@
+{{extend plantilla()}}
+{{if len(infoSucurs) >0:}}
+    <div class="row">
+        {{ for suc in  infoSucurs :}}
+            <div class="col-md-4">
+                <div class="card card-widget widget-user-2 shadow-sm cursor">
+                    <div class="widget-user-header bg-warning">
+                        <div class="widget-user-image">
+                        <img class="img-circle elevation-2" src="{{=URL('static','template/dist/img/AdminLTELogo.png')}}" alt="User Avatar">
+                        </div>
+                        <h3 class="widget-user-username">{{=suc.sucursales_nombre}}</h3>
+                        <h5 class="widget-user-desc">{{=suc.sucursales_codigo}}</h5>
+                    </div>
+                    <div class="card-footer p-0">
+                        <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <span  class="nav-link">
+                            Asignado <span class="float-right badge bg-primary">$ 550.000.000</span>
+                            </span>
+                        </li>
+                        <li class="nav-item">
+                            <span  class="nav-link">
+                            Gestionado <span class="float-right badge bg-info">$ 100.000.000</span>
+                            </span>
+                        </li>
+                        <li class="nav-item">
+                            <span  class="nav-link">
+                            Efectivo <span class="float-right badge bg-success">$ 70.000.000</span>
+                            </span>
+                        </li>
+                        <li class="nav-item">
+                            <span  class="nav-link">
+                            Rechazado <span class="float-right badge bg-danger">$ 30.000.000</span>
+                            </span>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {{ pass }}
+    </div>
+{{else:}}
+    <p style='text-align:center;'>Sin Información de sus sucursales</p>
+{{pass}}
+
+
+
+

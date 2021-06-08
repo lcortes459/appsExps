@@ -1,0 +1,516 @@
+timestamp: 2021-03-17T07:30:24.524943
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "first_name" CHAR(128),
+    "last_name" CHAR(128),
+    "email" CHAR(512),
+    "password" CHAR(512),
+    "registration_key" CHAR(512),
+    "reset_password_key" CHAR(512),
+    "registration_id" CHAR(512)
+);
+success!
+timestamp: 2021-03-17T07:30:24.645773
+CREATE TABLE "auth_group"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "role" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2021-03-17T07:30:24.932220
+CREATE TABLE "auth_membership"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2021-03-17T07:30:25.060045
+CREATE TABLE "auth_permission"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  ,
+    "name" CHAR(512),
+    "table_name" CHAR(512),
+    "record_id" INTEGER
+);
+success!
+timestamp: 2021-03-17T07:30:25.218053
+CREATE TABLE "auth_event"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "time_stamp" TIMESTAMP,
+    "client_ip" CHAR(512),
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "origin" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2021-03-17T07:30:25.272923
+CREATE TABLE "auth_cas"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "created_on" TIMESTAMP,
+    "service" CHAR(512),
+    "ticket" CHAR(512),
+    "renew" CHAR(1)
+);
+success!
+timestamp: 2021-06-08T00:07:40.782379
+CREATE TABLE "sucursales"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "sucursales_codigo" CHAR(512),
+    "sucursales_nombre" CHAR(512),
+    "sucursales_direccion" CHAR(512),
+    "sucursales_responsable" CHAR(512),
+    "sucursales_celular" CHAR(512),
+    "sucursales_email" CHAR(512),
+    "sucursales_estado" CHAR(512),
+    "sucursales_tipo_letra" CHAR(512),
+    "sucursales_color_corporativo" CHAR(512),
+    "sucursales_responsable_creacion" INTEGER,
+    "sucursales_fecha_creacion" INTEGER,
+    "sucursales_hora_creacion" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:07:40.796897
+CREATE TABLE "sucursales_archive"(
+    "current_record" INTEGER REFERENCES "sucursales" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "sucursales_codigo" CHAR(512),
+    "sucursales_nombre" CHAR(512),
+    "sucursales_direccion" CHAR(512),
+    "sucursales_responsable" CHAR(512),
+    "sucursales_celular" CHAR(512),
+    "sucursales_email" CHAR(512),
+    "sucursales_estado" CHAR(512),
+    "sucursales_tipo_letra" CHAR(512),
+    "sucursales_color_corporativo" CHAR(512),
+    "sucursales_responsable_creacion" INTEGER,
+    "sucursales_fecha_creacion" INTEGER,
+    "sucursales_hora_creacion" INTEGER
+);
+success!
+success!
+success!
+timestamp: 2021-06-08T00:08:46.803821
+CREATE TABLE "asignaciones"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "asignaciones_sucursal" INTEGER REFERENCES "sucursales" ("id") ON DELETE CASCADE  ,
+    "asignaciones_codigo" CHAR(512),
+    "asignaciones_nombre" CHAR(512),
+    "asignaciones_estado" CHAR(512),
+    "asignaciones_responsable_creacion" CHAR(512),
+    "asignaciones_fecha_creacion" INTEGER,
+    "asignaciones_hora_creacion" INTEGER,
+    "asignaciones_fecha_inicio" INTEGER,
+    "asignaciones_fecha_cierre" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.813830
+CREATE TABLE "asignaciones_archive"(
+    "current_record" INTEGER REFERENCES "asignaciones" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "asignaciones_sucursal" INTEGER REFERENCES "sucursales" ("id") ON DELETE CASCADE  ,
+    "asignaciones_codigo" CHAR(512),
+    "asignaciones_nombre" CHAR(512),
+    "asignaciones_estado" CHAR(512),
+    "asignaciones_responsable_creacion" CHAR(512),
+    "asignaciones_fecha_creacion" INTEGER,
+    "asignaciones_hora_creacion" INTEGER,
+    "asignaciones_fecha_inicio" INTEGER,
+    "asignaciones_fecha_cierre" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.823251
+CREATE TABLE "bases"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "bases_asignacion" INTEGER REFERENCES "asignaciones" ("id") ON DELETE CASCADE  ,
+    "bases_codigo" CHAR(512),
+    "bases_nombre" CHAR(512),
+    "bases_estado" CHAR(512),
+    "bases_responsable_creacion" CHAR(512),
+    "bases_fecha_creacion" INTEGER,
+    "bases_hora_creacion" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.832640
+CREATE TABLE "bases_archive"(
+    "current_record" INTEGER REFERENCES "bases" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "bases_asignacion" INTEGER REFERENCES "asignaciones" ("id") ON DELETE CASCADE  ,
+    "bases_codigo" CHAR(512),
+    "bases_nombre" CHAR(512),
+    "bases_estado" CHAR(512),
+    "bases_responsable_creacion" CHAR(512),
+    "bases_fecha_creacion" INTEGER,
+    "bases_hora_creacion" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.842759
+CREATE TABLE "campanas"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "campanas_base" INTEGER REFERENCES "bases" ("id") ON DELETE CASCADE  ,
+    "campanas_codigo" CHAR(512),
+    "campanas_nombre" CHAR(512),
+    "campanas_estado" CHAR(512),
+    "campanas_responsable_creacion" CHAR(512),
+    "campanas_fecha_creacion" INTEGER,
+    "campanas_hora_creacion" INTEGER,
+    "campanas_fecha_inicio" INTEGER,
+    "campanas_fecha_cierre" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.853127
+CREATE TABLE "campanas_archive"(
+    "current_record" INTEGER REFERENCES "campanas" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "campanas_base" INTEGER REFERENCES "bases" ("id") ON DELETE CASCADE  ,
+    "campanas_codigo" CHAR(512),
+    "campanas_nombre" CHAR(512),
+    "campanas_estado" CHAR(512),
+    "campanas_responsable_creacion" CHAR(512),
+    "campanas_fecha_creacion" INTEGER,
+    "campanas_hora_creacion" INTEGER,
+    "campanas_fecha_inicio" INTEGER,
+    "campanas_fecha_cierre" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.862390
+CREATE TABLE "asignacion_historico"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "asignacion_historico_identificacion" TEXT,
+    "asignacion_historico_nombre" TEXT,
+    "asignacion_historico_telefono" TEXT,
+    "asignacion_historico_estado" CHAR(512),
+    "asignacion_historico_fecha_creacion" INTEGER,
+    "asignacion_historico_hora_creacion" INTEGER,
+    "asignacion_historico_idbase" INTEGER,
+    "asignacion_historico_idcampana" INTEGER,
+    "asignacion_historico_dia" INTEGER,
+    "asignacion_historico_mes" INTEGER,
+    "asignacion_historico_anio" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.871755
+CREATE TABLE "asignacion_historico_archive"(
+    "current_record" INTEGER REFERENCES "asignacion_historico" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "asignacion_historico_identificacion" TEXT,
+    "asignacion_historico_nombre" TEXT,
+    "asignacion_historico_telefono" TEXT,
+    "asignacion_historico_estado" CHAR(512),
+    "asignacion_historico_fecha_creacion" INTEGER,
+    "asignacion_historico_hora_creacion" INTEGER,
+    "asignacion_historico_idbase" INTEGER,
+    "asignacion_historico_idcampana" INTEGER,
+    "asignacion_historico_dia" INTEGER,
+    "asignacion_historico_mes" INTEGER,
+    "asignacion_historico_anio" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.882741
+CREATE TABLE "agendas"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "agendas_asignacion_historico" INTEGER REFERENCES "asignacion_historico" ("id") ON DELETE CASCADE  ,
+    "agendas_sucursal" INTEGER,
+    "agendas_campana" INTEGER,
+    "agendas_base" INTEGER,
+    "agendas_hora_agenda" CHAR(512),
+    "agendas_fecha_agenda" CHAR(512),
+    "agendas_asesor" INTEGER,
+    "agendas_estado" CHAR(512),
+    "agendas_fecha_creacion" INTEGER,
+    "agendas_hora_creacion" INTEGER,
+    "agendas_comentarios" TEXT,
+    "agendas_dia" INTEGER,
+    "agendas_mes" INTEGER,
+    "agendas_anio" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.892897
+CREATE TABLE "agendas_archive"(
+    "current_record" INTEGER REFERENCES "agendas" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "agendas_asignacion_historico" INTEGER REFERENCES "asignacion_historico" ("id") ON DELETE CASCADE  ,
+    "agendas_sucursal" INTEGER,
+    "agendas_campana" INTEGER,
+    "agendas_base" INTEGER,
+    "agendas_hora_agenda" CHAR(512),
+    "agendas_fecha_agenda" CHAR(512),
+    "agendas_asesor" INTEGER,
+    "agendas_estado" CHAR(512),
+    "agendas_fecha_creacion" INTEGER,
+    "agendas_hora_creacion" INTEGER,
+    "agendas_comentarios" TEXT,
+    "agendas_dia" INTEGER,
+    "agendas_mes" INTEGER,
+    "agendas_anio" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.903745
+CREATE TABLE "ventas"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "ventas_identificacion" CHAR(512),
+    "ventas_nombres" CHAR(512),
+    "ventas_celular" CHAR(512),
+    "ventas_valor_venta" DOUBLE,
+    "ventas_valor_oferta" DOUBLE,
+    "ventas_estado" CHAR(512),
+    "ventas_sucursal" INTEGER,
+    "ventas_asignacion" INTEGER,
+    "ventas_campana" INTEGER,
+    "ventas_asignacion_historico" INTEGER REFERENCES "asignacion_historico" ("id") ON DELETE CASCADE  ,
+    "ventas_fecha_creacion" INTEGER,
+    "ventas_hora_creacion" INTEGER,
+    "ventas_comentarios" TEXT,
+    "ventas_dia" INTEGER,
+    "ventas_mes" INTEGER,
+    "ventas_anio" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.914183
+CREATE TABLE "ventas_archive"(
+    "current_record" INTEGER REFERENCES "ventas" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "ventas_identificacion" CHAR(512),
+    "ventas_nombres" CHAR(512),
+    "ventas_celular" CHAR(512),
+    "ventas_valor_venta" DOUBLE,
+    "ventas_valor_oferta" DOUBLE,
+    "ventas_estado" CHAR(512),
+    "ventas_sucursal" INTEGER,
+    "ventas_asignacion" INTEGER,
+    "ventas_campana" INTEGER,
+    "ventas_asignacion_historico" INTEGER REFERENCES "asignacion_historico" ("id") ON DELETE CASCADE  ,
+    "ventas_fecha_creacion" INTEGER,
+    "ventas_hora_creacion" INTEGER,
+    "ventas_comentarios" TEXT,
+    "ventas_dia" INTEGER,
+    "ventas_mes" INTEGER,
+    "ventas_anio" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.924453
+CREATE TABLE "tipo_tipificacion"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "tipo_tipificacion_id_resultado" CHAR(512),
+    "tipo_tipificacion_orden" CHAR(512),
+    "tipo_tipificacion_estado" CHAR(512),
+    "tipo_tipificacion_descripcion" CHAR(512),
+    "tipo_tipificacion_fecha_creacion" INTEGER,
+    "tipo_tipificacion_hora_creacion" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.933585
+CREATE TABLE "tipo_tipificacion_archive"(
+    "current_record" INTEGER REFERENCES "tipo_tipificacion" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "tipo_tipificacion_id_resultado" CHAR(512),
+    "tipo_tipificacion_orden" CHAR(512),
+    "tipo_tipificacion_estado" CHAR(512),
+    "tipo_tipificacion_descripcion" CHAR(512),
+    "tipo_tipificacion_fecha_creacion" INTEGER,
+    "tipo_tipificacion_hora_creacion" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.943520
+CREATE TABLE "tipificacion"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "tipificacion_identificacion_cliente" CHAR(512),
+    "tipificacion_nombre_cliente" CHAR(512),
+    "tipificacion_telefono" CHAR(512),
+    "tipificacion_resultado" INTEGER REFERENCES "tipo_tipificacion" ("id") ON DELETE CASCADE  ,
+    "tipificacion_descripcion_resultado" TEXT,
+    "tipificacion_numero_producto" TEXT,
+    "tipificacion_valor_venta" DOUBLE,
+    "tipificacion_valor_oferta" DOUBLE,
+    "tipificacion_sucursal" INTEGER,
+    "tipificacion_asignacion" INTEGER,
+    "tipificacion_campana" INTEGER,
+    "tipificacion_base" INTEGER,
+    "tipificacion_asignacion_historico" INTEGER REFERENCES "asignacion_historico" ("id") ON DELETE CASCADE  ,
+    "tipificacion_asesor_id" INTEGER,
+    "tipificacion_fecha_creacion" INTEGER,
+    "tipificacion_hora_creacion" INTEGER,
+    "tipificacion_comentarios" TEXT,
+    "tipificacion_dia" INTEGER,
+    "tipificacion_mes" INTEGER,
+    "tipificacion_anio" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.954051
+CREATE TABLE "tipificacion_archive"(
+    "current_record" INTEGER REFERENCES "tipificacion" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "tipificacion_identificacion_cliente" CHAR(512),
+    "tipificacion_nombre_cliente" CHAR(512),
+    "tipificacion_telefono" CHAR(512),
+    "tipificacion_resultado" INTEGER REFERENCES "tipo_tipificacion" ("id") ON DELETE CASCADE  ,
+    "tipificacion_descripcion_resultado" TEXT,
+    "tipificacion_numero_producto" TEXT,
+    "tipificacion_valor_venta" DOUBLE,
+    "tipificacion_valor_oferta" DOUBLE,
+    "tipificacion_sucursal" INTEGER,
+    "tipificacion_asignacion" INTEGER,
+    "tipificacion_campana" INTEGER,
+    "tipificacion_base" INTEGER,
+    "tipificacion_asignacion_historico" INTEGER REFERENCES "asignacion_historico" ("id") ON DELETE CASCADE  ,
+    "tipificacion_asesor_id" INTEGER,
+    "tipificacion_fecha_creacion" INTEGER,
+    "tipificacion_hora_creacion" INTEGER,
+    "tipificacion_comentarios" TEXT,
+    "tipificacion_dia" INTEGER,
+    "tipificacion_mes" INTEGER,
+    "tipificacion_anio" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.965382
+CREATE TABLE "bases_asignacion"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "bases_asignacion_asignacion" INTEGER REFERENCES "asignaciones" ("id") ON DELETE CASCADE  ,
+    "bases_asignacion_base" CHAR(512),
+    "bases_asignacion_creador" INTEGER,
+    "bases_asignacion_fecha_creacion" INTEGER,
+    "bases_asignacion_hora_creacion" INTEGER,
+    "bases_asignacion_dia" INTEGER,
+    "bases_asignacion_mes" INTEGER,
+    "bases_asignacion_anio" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.974664
+CREATE TABLE "bases_asignacion_archive"(
+    "current_record" INTEGER REFERENCES "bases_asignacion" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "bases_asignacion_asignacion" INTEGER REFERENCES "asignaciones" ("id") ON DELETE CASCADE  ,
+    "bases_asignacion_base" CHAR(512),
+    "bases_asignacion_creador" INTEGER,
+    "bases_asignacion_fecha_creacion" INTEGER,
+    "bases_asignacion_hora_creacion" INTEGER,
+    "bases_asignacion_dia" INTEGER,
+    "bases_asignacion_mes" INTEGER,
+    "bases_asignacion_anio" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:46.984964
+ALTER TABLE "auth_user" ADD "sal_llamada" INTEGER;
+timestamp: 2021-06-08T00:08:46.993053
+ALTER TABLE "auth_user" ADD "tipo" TEXT;
+timestamp: 2021-06-08T00:08:47.000115
+ALTER TABLE "auth_user" ADD "sucursal" INTEGER REFERENCES "sucursales" ("id") ON DELETE CASCADE  ;
+success!
+timestamp: 2021-06-08T00:08:47.023496
+CREATE TABLE "auth_user_archive"(
+    "current_record" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "first_name" CHAR(128),
+    "last_name" CHAR(128),
+    "email" CHAR(512),
+    "password" CHAR(512),
+    "registration_key" CHAR(512),
+    "reset_password_key" CHAR(512),
+    "registration_id" CHAR(512),
+    "tipo" TEXT,
+    "sucursal" INTEGER REFERENCES "sucursales" ("id") ON DELETE CASCADE  ,
+    "sal_llamada" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:47.033645
+CREATE TABLE "empleados"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "empleados_nombres" CHAR(512),
+    "empleados_identificacion" CHAR(512),
+    "empleados_celular" CHAR(512),
+    "empleados_fecha_ingreso" CHAR(512),
+    "empleados_fecha_nacimiento" CHAR(512),
+    "empleados_contacto_emergancia" CHAR(512),
+    "empleados_parentesco_emergancia" CHAR(512),
+    "empleados_telefono_emergancia" CHAR(512),
+    "empleados_direccion_recidencia" CHAR(512),
+    "empleados_email" CHAR(512),
+    "empleados_genero" TEXT,
+    "empleados_observaciones" TEXT,
+    "empleados_estado" CHAR(512),
+    "empleados_fecha_creacion" INTEGER,
+    "empleados_hora_creacion" INTEGER,
+    "empleados_foto" CHAR(512),
+    "empleados_sucursal" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:47.044641
+CREATE TABLE "empleados_archive"(
+    "current_record" INTEGER REFERENCES "empleados" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "empleados_nombres" CHAR(512),
+    "empleados_identificacion" CHAR(512),
+    "empleados_celular" CHAR(512),
+    "empleados_fecha_ingreso" CHAR(512),
+    "empleados_fecha_nacimiento" CHAR(512),
+    "empleados_contacto_emergancia" CHAR(512),
+    "empleados_parentesco_emergancia" CHAR(512),
+    "empleados_telefono_emergancia" CHAR(512),
+    "empleados_direccion_recidencia" CHAR(512),
+    "empleados_email" CHAR(512),
+    "empleados_genero" TEXT,
+    "empleados_observaciones" TEXT,
+    "empleados_estado" CHAR(512),
+    "empleados_fecha_creacion" INTEGER,
+    "empleados_hora_creacion" INTEGER,
+    "empleados_foto" CHAR(512),
+    "empleados_sucursal" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:47.054754
+CREATE TABLE "usuario_empleado"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "usuario_empleado_empleado" INTEGER REFERENCES "empleados" ("id") ON DELETE CASCADE  ,
+    "usuario_empleado_usuario" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2021-06-08T00:08:47.063462
+CREATE TABLE "usuario_empleado_archive"(
+    "current_record" INTEGER REFERENCES "usuario_empleado" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "usuario_empleado_empleado" INTEGER REFERENCES "empleados" ("id") ON DELETE CASCADE  ,
+    "usuario_empleado_usuario" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2021-06-08T00:08:47.071610
+CREATE TABLE "estado_tiempos"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "estado_tiempos_codigo" CHAR(512),
+    "estado_tiempos_nombre" TEXT,
+    "estado_tiempos_estado" CHAR(512),
+    "estado_tiempos_fecha_creacion" INTEGER,
+    "estado_tiempos_hora_creacion" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:47.080235
+CREATE TABLE "estado_tiempos_archive"(
+    "current_record" INTEGER REFERENCES "estado_tiempos" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "estado_tiempos_codigo" CHAR(512),
+    "estado_tiempos_nombre" TEXT,
+    "estado_tiempos_estado" CHAR(512),
+    "estado_tiempos_fecha_creacion" INTEGER,
+    "estado_tiempos_hora_creacion" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:47.092893
+CREATE TABLE "usuarios_estado"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "usuarios_estado_usuario" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "usuarios_estado_tiempo" INTEGER REFERENCES "estado_tiempos" ("id") ON DELETE CASCADE  ,
+    "usuarios_estado_estado" CHAR(512),
+    "usuarios_estado_fecha_creacion" INTEGER,
+    "usuarios_estado_hora_creacion" INTEGER
+);
+success!
+timestamp: 2021-06-08T00:08:47.101715
+CREATE TABLE "usuarios_estado_archive"(
+    "current_record" INTEGER REFERENCES "usuarios_estado" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "usuarios_estado_usuario" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "usuarios_estado_tiempo" INTEGER REFERENCES "estado_tiempos" ("id") ON DELETE CASCADE  ,
+    "usuarios_estado_estado" CHAR(512),
+    "usuarios_estado_fecha_creacion" INTEGER,
+    "usuarios_estado_hora_creacion" INTEGER
+);
+success!
