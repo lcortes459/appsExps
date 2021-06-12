@@ -514,3 +514,38 @@ CREATE TABLE "usuarios_estado_archive"(
     "usuarios_estado_hora_creacion" INTEGER
 );
 success!
+timestamp: 2021-06-11T14:07:05.050034
+CREATE TABLE "asignacion_piscina"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "asignacion_piscina_identificacion" TEXT,
+    "asignacion_piscina_nombre" TEXT,
+    "asignacion_piscina_telefono" TEXT,
+    "asignacion_piscina_estado" CHAR(512),
+    "asignacion_piscina_fecha_creacion" INTEGER,
+    "asignacion_piscina_hora_creacion" INTEGER,
+    "asignacion_piscina_idbase" INTEGER,
+    "asignacion_piscina_idhistorica" INTEGER,
+    "asignacion_piscina_idcampana" INTEGER,
+    "asignacion_piscina_dia" INTEGER,
+    "asignacion_piscina_mes" INTEGER,
+    "asignacion_piscina_anio" INTEGER
+);
+success!
+timestamp: 2021-06-11T14:07:05.067562
+CREATE TABLE "asignacion_piscina_archive"(
+    "current_record" INTEGER REFERENCES "asignacion_piscina" ("id") ON DELETE CASCADE  ,
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "asignacion_piscina_identificacion" TEXT,
+    "asignacion_piscina_nombre" TEXT,
+    "asignacion_piscina_telefono" TEXT,
+    "asignacion_piscina_estado" CHAR(512),
+    "asignacion_piscina_fecha_creacion" INTEGER,
+    "asignacion_piscina_hora_creacion" INTEGER,
+    "asignacion_piscina_idbase" INTEGER,
+    "asignacion_piscina_idhistorica" INTEGER,
+    "asignacion_piscina_idcampana" INTEGER,
+    "asignacion_piscina_dia" INTEGER,
+    "asignacion_piscina_mes" INTEGER,
+    "asignacion_piscina_anio" INTEGER
+);
+success!

@@ -16,7 +16,7 @@ def index():
     if grup[0]=='Coordinador':
         redirect(URL('coordinador','dashboard'))
     elif grup[0]=='Asesor':
-        redirect(URL('asesores','dashboard'))
+        redirect(URL('asesor','dashboard'))
     else:
         infoSucurs = asivamosSucursales()
         pass

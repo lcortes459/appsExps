@@ -115,9 +115,30 @@ def db_tableAsinacionHistory():
     db.asignacion_historico._enable_record_versioning()
     pass
 
-def db_tableAgendas():
+
+def db_tableAsinacionPiscina():
     if not hasattr(db,'asignacion_historico'):
         db_tableAsinacionHistory()
+    db.define_table('asignacion_piscina', 
+        Field('asignacion_piscina_identificacion','text'),
+        Field('asignacion_piscina_nombre','text'),
+        Field('asignacion_piscina_telefono','text'),
+        Field('asignacion_piscina_estado',default=True),
+        Field('asignacion_piscina_fecha_creacion' , 'integer' ,default=fechaIntModels),
+        Field('asignacion_piscina_hora_creacion' , 'integer',default=horaIntModels),
+        Field('asignacion_piscina_idBase', 'integer'),
+        Field('asignacion_piscina_idHistorica', 'integer'),
+        Field('asignacion_piscina_idCampana', 'integer',default=0),
+        Field('asignacion_piscina_dia','integer',default=fechaIntergar('dia')),
+        Field('asignacion_piscina_mes','integer',default=fechaIntergar('mes')),
+        Field('asignacion_piscina_anio','integer',default=fechaIntergar('anio')),
+    )
+    db.asignacion_piscina._enable_record_versioning()
+    pass
+
+def db_tableAgendas():
+    if not hasattr(db,'asignacion_piscina'):
+        db_tableAsinacionPiscina()
     db.define_table('agendas', 
         Field('agendas_asignacion_historico','reference asignacion_historico'),
         Field('agendas_sucursal','integer'),

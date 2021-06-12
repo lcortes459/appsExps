@@ -223,7 +223,7 @@ def asignaciones():
 
 @auth.requires_login()
 def basesAsignacion():
-	titulo                   = T("Listado Bases x asignación")
+	titulo             = T("Listado Bases x asignación")
 	varDatos           = request.vars
 	dbBasAsig          = db.bases_asignacion
 	links = [
@@ -244,6 +244,14 @@ def basesAsignacion():
 	return locals()
 
 
+@auth.requires_login()
+def cargueBase():
+	varDatos = request.vars
+	print('varDatos', varDatos.file)
+	ejecucion = estructuracionBase( varDatos.file )
+	resul    = 0
+	return resul
+    	
 @auth.requires_login()
 def bases():
     response.title    = T("bases")    
