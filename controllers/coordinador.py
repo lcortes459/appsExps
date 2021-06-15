@@ -5,5 +5,5 @@ def dashboard():
     response.title    = T("Dashboard")  
     response.subTitle = T("Asi vamos")
     titulo            = T("Dashboard coordinador")
-    infoAsignaciones  = []
+    infoAsignaciones  = asivamosAsignaciones()
     return locals()

@@ -251,29 +251,36 @@ def cargueBase():
 	ejecucion = estructuracionBase( varDatos.file )
 	resul    = 0
 	return resul
-    	
+  
+
+
 @auth.requires_login()
 def bases():
     response.title    = T("bases")    
     titulo            = T("Listado bases")
-    links             = []
+    def createProceso():
+        dato = db().select(db.bases.ALL, orderby=~db.bases.id).first()
+        estructuracionBase( dato.id )
+        pass
     dbBases           = db.bases
-    links = [
-		dict(header='Empleado', body=lambda r: DIV( getEmpladoAsigar(r.id), _id='asignarEmpleado_%s' %r.id ) )
-	]
+    links             = []
     dbCBasesSql       = ( dbBases.id > 0 )
+    #estructuracionBase( 4 )
     bast              = SQLFORM.grid(
         dbCBasesSql,
-            deletable        = False,
+            deletable        = True,
             details          = False,
             csv              = False,
             maxtextlength    = 50,
             editable         = True,
             paginate         = 100,
             links            = links,
-            orderby          = dbBases.id
+            orderby          = dbBases.id,
+         	oncreate         = lambda f: createProceso()
         )
     return locals()
+
+
 
 @auth.requires_login()
 def campanas():

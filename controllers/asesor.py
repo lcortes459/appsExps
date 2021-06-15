@@ -4,8 +4,20 @@
 def dashboard():
     response.title    = T("Dashboard")  
     response.subTitle = T("Asi vamos")
-    titulo            = T("Dashboard coordinador")
-    infoAsignaciones  = []
+    titulo            = T("Dashboard asesor")
+    infoAsignaciones  = countAsesorPiscina()
+    return locals()
+
+
+@auth.requires_login()
+def buscarRegisto():
+    resul = getAsesorPiscina()
+    return resul
+
+@auth.requires_login()
+def infoRegistro():
+    varsData          = request.vars
+    infoReg           = setAsesorPiscina( varsData.idRegistro )
     return locals()
 
 

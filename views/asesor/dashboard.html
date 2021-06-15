@@ -1,5 +1,5 @@
 {{extend plantilla()}}
-<div class="row">
+<div class="row" id="infoPrincipal">
     <div class="col-12 col-sm-12">
         <div class="card card-primary card-outline card-outline-tabs">
             <div class="card-header p-0 border-bottom-0">
@@ -21,7 +21,17 @@
                 <div class="card-body">
                 <div class="tab-content" id="custom-tabs-four-tabContent">
                     <div class="tab-pane fade active show" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
-                        <div class="table-responsive p-0">
+                       
+                        {{if infoAsignaciones > 0:}}
+                            <span class="right badge badge-primary">hay  {{=infoAsignaciones}} registros</span>
+                            <hr>
+                            <a href="javascript:aseInt.siguienteRegistro();">Siguiente registro >></a>
+                        {{else:}}
+                            <span class="right badge badge-danger">hay  {{=infoAsignaciones}} registros</span>
+                        {{pass}}
+                    </div>
+                    <div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
+                       <div class="table-responsive p-0">
                             <table id="example" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
@@ -44,102 +54,9 @@
                                             <a href="javascript:aseInt.gestion('Tiger Nixon');"><i class="fa fa-play text-success" style="font-size:1em;"></i>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>Garrett Winters</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>63</td>
-                                        <td>$170,750</td>
-                                        <td style="text-align:center;">
-                                            <a href="javascript:aseInt.gestion('Garrett Winters');"><i class="fa fa-play text-success" style="font-size:1em;"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ashton Cox</td>
-                                        <td>Junior Technical Author</td>
-                                        <td>San Francisco</td>
-                                        <td>66</td>
-                                        <td>$86,000</td>
-                                        <td style="text-align:center;">
-                                            <a href="javascript:aseInt.gestion('Ashton Cox');"><i class="fa fa-play text-success" style="font-size:1em;"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cedric Kelly</td>
-                                        <td>Senior Javascript Developer</td>
-                                        <td>Edinburgh</td>
-                                        <td>22</td>
-                                        <td>$433,060</td>
-                                        <td style="text-align:center;">
-                                            <a href="javascript:aseInt.gestion('Cedric Kelly');"><i class="fa fa-play text-success" style="font-size:1em;"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Airi Satou</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>33</td>
-                                        <td>$162,700</td>
-                                        <td style="text-align:center;">
-                                            <a href="javascript:aseInt.gestion('Airi Satou');"><i class="fa fa-play text-success" style="font-size:1em;"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>$320,800</td>
-                                        <td style="text-align:center;">
-                                            <a href="javascript:aseInt.gestion('Tiger Nixon');"><i class="fa fa-play text-success" style="font-size:1em;"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Garrett Winters</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>63</td>
-                                        <td>$170,750</td>
-                                        <td style="text-align:center;">
-                                            <a href="javascript:aseInt.gestion('Garrett Winters');"><i class="fa fa-play text-success" style="font-size:1em;"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ashton Cox</td>
-                                        <td>Junior Technical Author</td>
-                                        <td>San Francisco</td>
-                                        <td>66</td>
-                                        <td>$86,000</td>
-                                        <td style="text-align:center;">
-                                            <a href="javascript:aseInt.gestion('Ashton Cox');"><i class="fa fa-play text-success" style="font-size:1em;"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cedric Kelly</td>
-                                        <td>Senior Javascript Developer</td>
-                                        <td>Edinburgh</td>
-                                        <td>22</td>
-                                        <td>$433,060</td>
-                                        <td style="text-align:center;">
-                                            <a href="javascript:aseInt.gestion('Cedric Kelly');"><i class="fa fa-play text-success" style="font-size:1em;"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Airi Satou</td>
-                                        <td>Accountant</td>
-                                        <td>Tokyo</td>
-                                        <td>33</td>
-                                        <td>$162,700</td>
-                                        <td style="text-align:center;">
-                                            <a href="javascript:aseInt.gestion('Airi Satou');"><i class="fa fa-play text-success" style="font-size:1em;"></i>
-                                        </td>
-                                    </tr> 
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                    <div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
-                       Proximamente
                     </div>
                     <div class="tab-pane fade" id="custom-tabs-four-messages" role="tabpanel" aria-labelledby="custom-tabs-four-messages-tab">
                        Proximamente
@@ -152,6 +69,7 @@
         </div>
     </div>
 </div>
+<div id="infoRegistro"></div>
 {{block page_js}}
     <script src="{{=URL('static','js/asesor/dashboard.js')}}"></script>
     <script>

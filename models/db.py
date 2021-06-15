@@ -188,6 +188,16 @@ db.define_table('usuarios_estado',
 db.usuarios_estado._enable_record_versioning()
 
 
+db.define_table('asesor_piscina',
+    Field('asesor_piscina_usuario','reference auth_user'),
+    Field('asesor_piscina_piscina','reference asignacion_piscina'),
+    Field('asesor_piscina_estado',defautl=True),
+    Field('asesor_piscina_fecha_creacion' , 'integer',default=fechaIntModels),
+    Field('asesor_piscina_hora_creacion' , 'integer',default=horaIntModels),
+)
+db.asesor_piscina._enable_record_versioning()
+
+
 
 # -------------------------------------------------------------------------
 # configure email

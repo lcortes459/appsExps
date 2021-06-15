@@ -58,19 +58,23 @@ def db_tableBaes():
     if not hasattr(db,'asignaciones'):
         db_tableAsiganciones()
     db.define_table('bases', 
-        Field('bases_asignacion' ,'reference asignaciones'),
-        Field('bases_codigo'),
+        Field('bases_asignacion' ,'reference asignaciones',label='Asignación'),
+        Field('bases_base','upload',label='Registros base', represent= lambda bases_base, r: XML("""<div style="text-align: center"> <i class="far fa-file-excel text-success" aria-hidden="true"></i></div>""" )),
+        #Field('bases_demo','upload',label='Registros demograficos', represent= lambda bases_demo, r: XML("""<div style="text-align: center"><i class="far fa-file-excel text-success" aria-hidden="true"></i></div>""" )),
         Field('bases_nombre'),
-        Field('bases_estado',default=True),
+        Field('bases_estado',default='En proceso',label='Estado base', represent= lambda bases_estado, r: XML("""<div style="text-align: center"><span class="right badge badge-primary">"""+str(r.bases_estado)+"""</span></div>""" )),
         Field('bases_responsable_creacion'),
         Field('bases_fecha_creacion' , 'integer' ,default=fechaIntModels),
         Field('bases_hora_creacion' , 'integer',default=horaIntModels),
         format="%(bases_nombre)s"
     )
     db.bases.id.readable =  db.bases.id.writable = False
-    db.bases.bases_estado.readable =  db.bases.bases_estado.writable = False
+    #db.bases.bases_estado.writable = False
+    #db.bases.bases_estado.readable =  db.bases.bases_fecha_creacion.writable = False
     db.bases.bases_fecha_creacion.readable =  db.bases.bases_fecha_creacion.writable = False
     db.bases.bases_hora_creacion.readable =  db.bases.bases_hora_creacion.writable = False
+    db.bases.bases_nombre.readable =  db.bases.bases_nombre.writable = False
+    db.bases.bases_responsable_creacion.readable =  db.bases.bases_responsable_creacion.writable = False
     db.bases._enable_record_versioning()
     pass
 
@@ -121,17 +125,23 @@ def db_tableAsinacionPiscina():
         db_tableAsinacionHistory()
     db.define_table('asignacion_piscina', 
         Field('asignacion_piscina_identificacion','text'),
-        Field('asignacion_piscina_nombre','text'),
+        Field('asignacion_piscina_nombres','text'),
         Field('asignacion_piscina_telefono','text'),
+        Field('asignacion_piscina_valor','text'),
+        Field('asignacion_piscina_cuidad','text'),
+        Field('asignacion_piscina_interes','text'),
+        Field('asignacion_piscina_cuotas','text'),
+        Field('asignacion_piscina_oficina','text'),
         Field('asignacion_piscina_estado',default=True),
         Field('asignacion_piscina_fecha_creacion' , 'integer' ,default=fechaIntModels),
         Field('asignacion_piscina_hora_creacion' , 'integer',default=horaIntModels),
+        Field('asignacion_piscina_idAsignacion', 'integer'),
         Field('asignacion_piscina_idBase', 'integer'),
-        Field('asignacion_piscina_idHistorica', 'integer'),
         Field('asignacion_piscina_idCampana', 'integer',default=0),
         Field('asignacion_piscina_dia','integer',default=fechaIntergar('dia')),
         Field('asignacion_piscina_mes','integer',default=fechaIntergar('mes')),
         Field('asignacion_piscina_anio','integer',default=fechaIntergar('anio')),
+        Field('asignacion_piscina_observaciones','text'),
     )
     db.asignacion_piscina._enable_record_versioning()
     pass
@@ -231,6 +241,7 @@ def db_tableBasesAsignacion():
     db.define_table('bases_asignacion', 
         Field('bases_asignacion_asignacion','reference asignaciones'),
         Field('bases_asignacion_base','upload'),
+        Field('bases_asignacion_demo','upload'),
         Field('bases_asignacion_creador','integer'),
         Field('bases_asignacion_fecha_creacion','integer' ,default=fechaIntModels),
         Field('bases_asignacion_hora_creacion','integer',default=horaIntModels),

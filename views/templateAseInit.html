@@ -77,12 +77,15 @@
             <div cla_ss="container-fluid">
             <div class="card card-default" id="cardPrincipal">
                 <div class="card-header header-gw-tablero" id="cardHeaderPrincipal">
-                <b>{{=titulo}}</b>
+                    <div class="pull-left" style="float:left;">
+                        <b>{{=titulo}}</b>
+                    </div>
+                    <div class="pull-right" id="subTitleAsesor" style="float:right;"></div>
                 </div>
                 <div class="card-body colorAldia" id="cardBodyPrincipal">
-                <div class="col-12">
-                    {{include}}
-                </div>
+                    <div class="col-12">
+                        {{include}}
+                    </div>
                 </div>
             </div>
             </div>
@@ -147,7 +150,7 @@
                                     </div>
                                     <div class="box-footer">
 
-                                        <a href="javascript:aseInt.guardarGestion();" class="btn bg-success margin btn-block"><i class="fa fa-send"></i>Guardar gestión</a>
+                                        <a href="javascript:aseInt.guardarGestion();" class="btn bg-primary margin btn-block"><i class="fa fa-send"></i>Guardar gestión</a>
                                     </div>
                                 </form>
                             </div>
