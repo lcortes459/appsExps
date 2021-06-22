@@ -5,7 +5,7 @@
             <div class="card-header p-0 border-bottom-0">
                 <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
                     <li class="nav-item">
-                    <a class="nav-link active" id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="true">Ejecuciones</a>
+                    <a class="nav-link active" id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="true">Gestionar</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">Mi agenda</a>
@@ -25,7 +25,7 @@
                         {{if infoAsignaciones > 0:}}
                             <span class="right badge badge-primary">hay  {{=infoAsignaciones}} registros</span>
                             <hr>
-                            <a href="javascript:aseInt.siguienteRegistro();">Siguiente registro >></a>
+                            <a class="btn btn-primary pulse" href="javascript:aseInt.siguienteRegistro();" style="float:right;">Siguiente registro >></a>
                         {{else:}}
                             <span class="right badge badge-danger">hay  {{=infoAsignaciones}} registros</span>
                         {{pass}}

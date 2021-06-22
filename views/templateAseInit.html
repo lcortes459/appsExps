@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{=URL('static','template/plugins/summernote/summernote-bs4.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','template/plugins/datatables-bs4/css/jquery.dataTables.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','css/styles.css')}}">
+    <link rel="shortcut icon" href="{{=URL('static','images/fondo.jpeg')}}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{=URL('static','images/fondo.jpeg')}}">
     {{include 'web2py_ajax.html'}} <!-- this includes jquery.js, calendar.js/.css and web2py.js -->
     {{block head}}{{end}}
 </head>
@@ -75,19 +77,19 @@
         </aside>
         <div class="content-wrapper">
             <div cla_ss="container-fluid">
-            <div class="card card-default" id="cardPrincipal">
-                <div class="card-header header-gw-tablero" id="cardHeaderPrincipal">
-                    <div class="pull-left" style="float:left;">
-                        <b>{{=titulo}}</b>
+                <div class="card card-default" id="cardPrincipal">
+                    <div class="card-header header-gw-tablero" id="cardHeaderPrincipal">
+                        <div class="pull-left" style="float:left;">
+                            <b>{{=titulo}}</b>
+                        </div>
+                        <div class="pull-right" id="subTitleAsesor" style="float:right;"></div>
                     </div>
-                    <div class="pull-right" id="subTitleAsesor" style="float:right;"></div>
-                </div>
-                <div class="card-body colorAldia" id="cardBodyPrincipal">
-                    <div class="col-12">
-                        {{include}}
+                    <div class="card-body colorAldia" id="cardBodyPrincipal">
+                        <div class="col-12">
+                            {{include}}
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
@@ -102,55 +104,53 @@
                                 <form role="form" id="formuploadProyectoFile">
                                     <div class="box-body"> 
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label>Tipo contacto</label>
-                                                    <select class="form-control" style="width: 100%;">
-                                                        <option selected="selected" data-select2-id="3">Seleccione una opción </option>
-                                                        <option>Contacto</option>
-                                                        <option>No contacto</option>
+                                                    <label>Tipo tipificación </label>
+                                                    <select class="form-control" style="width: 100%;" id="tipoTipificacion" onchange="aseInt.cargaTipoContacto(this);">
+                                                        <option value="0">Seleccione una opción </option>
+                                                        <option value="1">CONTACTO</option>
+                                                        <option value="2">NO CONTACTO</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label>Tipo contacto</label>
-                                                    <select class="form-control" style="width: 100%;">
-                                                        <option selected="selected" data-select2-id="3">Seleccione una opción </option>
-                                                        <option>CLIENTE NO GESTIONABLE</option>
-                                                        <option>NO APLICA</option>
-                                                        <option>NO EFECTIVO</option>
-                                                        <option>NO INTERESADO</option>
-                                                        <option>VENTA EFECTIVA</option>
-                                                        <option>VENTA NO EFECTIVA</option>
-                                                        <option>VOLVER A LLAMAR</option>
-                                                        <option>NO CONTACTO</option>
+                                                    <select class="form-control" disabled style="width: 100%;" id="tipoContacto" onchange="aseInt.cargaDescripciones(this);">
+                                                        <option value="0">Seleccione una opción</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label>Tipo contacto</label>
-                                                    <select class="form-control" style="width: 100%;">
+                                                    <label>Descripción</label>
+                                                    <select class="form-control" disabled style="width: 100%;" id="descripcionSel" onchange="aseInt.cargaOtrasDescripciones(this);">
                                                         <option selected="selected" data-select2-id="3">Seleccione una opción </option>
-                                                        <option>Cliente no desea ser contactado de nuevo</option>
-                                                        <option>No autoriza tratamiento de datos</option>
-                                                        <option>Reclamo en Trámite</option>
-                                                        <option>Cobertura geográfica</option>
-                                                        <option>Crédito en trámite</option>
-                                                        <option>Desempleado</option>
-                                                        <option>Fallecido</option>
-                                                        <option>Incapacidad fisica</option>
-                                                        <option>No cumple edad</option>
-                                                        <option>Cliente fuera del paÍs</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Otra</label>
+                                                    <select class="form-control" disabled style="width: 100%;" id="otroDescriptcion">
+                                                        <option selected="selected" data-select2-id="3">Seleccione una opción </option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Observaciones</label>
+                                                <textarea class="form-control" id="observaciones" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="box-footer">
 
-                                        <a href="javascript:aseInt.guardarGestion();" class="btn bg-primary margin btn-block"><i class="fa fa-send"></i>Guardar gestión</a>
+                                        <a href="javascript:aseInt.guardarGestion();" class="btn bg-primary margin btn-block disabled" id="btnGuardarGestion"><i class="fa fa-send"></i>Guardar gestión</a>
                                     </div>
                                 </form>
                             </div>
@@ -185,6 +185,179 @@
     <script src="{{=URL('static','template/dist/js/pages/dashboard.js')}}"></script>
     <script src="{{=URL('static','js/template/template.js')}}"></script>
     <script src="{{=URL('static','js/template/rt.js')}}"></script>
+    <!--script>
+
+        cargaTipoContacto = function( idSelect ) {
+            tipificacion = (idSelect.vidSelectlue || idSelect.options[idSelect.selectedIndex].value);
+            if ( parseInt(tipificacion) > 0 ) {
+
+                consultarTipoContacto( parseInt(tipificacion) );
+            }else{
+                $('#tipoContacto').html('<option value="0">Seleccione un opcion</option>');
+                $('#tipoContacto').prop("disabled", true);
+                $('#btnGuardarGestion').addClass('disabled');  
+            }
+        }
+        consultarTipoContacto = function( tipificacion ) {
+            if ( tipificacion === 1 ) {
+                var tmp = 'CONTACTO';
+            } else {
+                var tmp = 'NO CONTACTO';
+            }
+            $.ajax({
+                url: 'consultarTipoContacto',
+                type: 'GET',
+                dataType: 'json',
+                data: {tipoTipe: tmp},
+            })
+            .done(function( data ) {
+                $('#tipoContacto').prop("disabled", false);
+
+                if ( data.length > 0 ) {
+                    var dataHtml = new Array();
+                    $('#tipoContacto').html('');
+                    var conteo = 0;
+                    $.each(data, function(index, val) {
+                        if ( conteo === 0 ) {
+
+                            dataHtml.push(
+
+                                `
+                                    <option value="0">Seleccione un opcion</option>
+                                    <option value="`+val.tipo_tipificacion_desc_uno+`">`+val.tipo_tipificacion_desc_uno+`</option>
+                                `
+                            );
+
+                        }else{
+
+                            dataHtml.push(
+                                `
+                                    <option value="`+val.tipo_tipificacion_desc_uno+`">`+val.tipo_tipificacion_desc_uno+`</option>
+
+                                `
+                            );
+                        }
+
+                        conteo = conteo + 1;    
+                    });
+
+                    $('#tipoContacto').html(dataHtml);
+                }else {
+
+                    $('#tipoContacto').html('<option value="0">Este tipo de tipificación  no tiene tipos de contactos</option>');
+                }
+            });
+        }
+        cargaDescripciones = function( idSelect ) {
+            tipoContacto = (idSelect.vidSelectlue || idSelect.options[idSelect.selectedIndex].value);
+            if ( tipoContacto != 0 ) {
+                consultarDescripciones( tipoContacto );
+            }else{
+                $('#descripcionSel').html('<option value="0">Seleccione un opcion</option>');
+                $('#descripcionSel').prop("disabled", true);
+                $('#btnGuardarGestion').addClass('disabled');
+            }
+        }
+        consultarDescripciones = function( tipoContacto ) {
+            
+            $.ajax({
+                url: 'consultarDescripciones',
+                type: 'GET',
+                dataType: 'json',
+                data: {tipoContacto: tipoContacto},
+            })
+            .done(function( data ) {
+                $('#descripcionSel').prop("disabled", false);
+                if ( data.length > 0 ) {
+                    var dataHtml = new Array();
+                    $('#descripcionSel').html('');
+                    var conteo = 0;
+                    $.each(data, function(index, val) {
+                        if ( conteo === 0 ) {
+
+                            dataHtml.push(
+
+                                `
+                                    <option value="0">Seleccione un opcion</option>
+                                    <option value="`+val.tipo_tipificacion_desc_dos+`">`+val.tipo_tipificacion_desc_dos+`</option>
+                                `
+                            );
+
+                        }else{
+
+                            dataHtml.push(
+                                `
+                                    <option value="`+val.tipo_tipificacion_desc_dos+`">`+val.tipo_tipificacion_desc_dos+`</option>
+
+                                `
+                            );
+                        }
+
+                        conteo = conteo + 1;    
+                    });
+
+                    $('#descripcionSel').html(dataHtml);
+                }else {
+
+                    $('#descripcionSel').html('<option value="0">Este tipo de contacto no tiene descripciones</option>');
+                }
+            });
+        }
+        cargaOtrasDescripciones = function( idSelect ) {
+            descripcion = (idSelect.vidSelectlue || idSelect.options[idSelect.selectedIndex].value);
+            if ( descripcion != 0 ) {
+                consultarOtrsDescripciones( descripcion );
+                $('#btnGuardarGestion').removeClass('disabled');
+            }else{
+                $('#otroDescriptcion').html('<option value="0">Seleccione un opcion</option>');
+                $('#otroDescriptcion').prop("disabled", true); 
+                $('#btnGuardarGestion').addClass('disabled'); 
+            }
+        }
+        consultarOtrsDescripciones = function( descripcion ) {
+            
+            $.ajax({
+                url: 'consultarOtrsDescripciones',
+                type: 'GET',
+                dataType: 'json',
+                data: {descripcion: descripcion},
+            })
+            .done(function( data ) {
+                $('#otroDescriptcion').prop("disabled", false);
+                if ( data.length > 0 ) {
+                    var dataHtml = new Array();
+                    $('#otroDescriptcion').html('');
+                    var conteo = 0;
+                    $.each(data, function(index, val) {
+                        if ( conteo === 0 ) {
+
+                            dataHtml.push(
+
+                                `
+                                    <option value="0">Seleccione un opcion</option>
+                                    <option value="`+val.tipo_tipificacion_desc_tres+`">`+val.tipo_tipificacion_desc_tres+`</option>
+                                `
+                            );
+
+                        }else{
+
+                            dataHtml.push(
+                                `
+                                    <option value="`+val.tipo_tipificacion_desc_tres+`">`+val.tipo_tipificacion_desc_tres+`</option>
+
+                                `
+                            );
+                        }
+                        conteo = conteo + 1;    
+                    });
+                    $('#otroDescriptcion').html(dataHtml);
+                }else {
+
+                    $('#otroDescriptcion').html('<option value="0">Este tipo de contacto no tiene otras descripciones</option>');
+                }
+            });
+        }
+    </script-->
     {{block page_js}}{{end page_js}}
 </body>
 </html>

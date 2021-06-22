@@ -13,9 +13,9 @@ var ing = {
             $('#divLockScreen').show();
 
             if ((local.img === '0') || (local.img === 0)) {
-                img = "/appsExps/static/template/dist/img/user2-160x160.jpg";
+                img = "/PonosCRM/static/template/dist/img/user2-160x160.jpg";
             } else {
-                img = "/appsExps/" + local.img;
+                img = "/PonosCRM/" + local.img;
             }
             $('#divImg,#divNombreUsuario').html('');
             $('#divNombreUsuario').html(local.nombres);
@@ -298,7 +298,7 @@ var ing = {
             position: 'top-end',
             icon: 'success',
             title: 'Datos correctos.',
-            text: 'En un momento sera redireccionado a AppsExps',
+            text: 'En un momento sera redireccionado a PonosCRM',
             showConfirmButton: false,
             timer: 2000
         }).then(() => {

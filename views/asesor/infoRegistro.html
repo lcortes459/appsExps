@@ -10,21 +10,23 @@
 
           <h3 class="profile-username text-center">{{=info.asignacion_piscina_nombres}}</h3>
 
-          <p class="text-muted text-center">{{=info.asignacion_piscina_cuidad}}</p>
+          <p class="text-muted text-center">{{=info.asignacion_piscina_identificacion}}</p>
 
           <ul class="list-group list-group-unbordered mb-3">
             <li class="list-group-item">
               <b>Cupo</b> <a class="float-right">$ {{=info.asignacion_piscina_valor}}</a>
             </li>
             <li class="list-group-item">
-              <b>Cuotas</b> <a class="float-right">{{=info.asignacion_piscina_cuotas}}</a>
+              <b>Plazo</b> <a class="float-right">{{=info.asignacion_piscina_cuotas}}</a>
             </li>
             <li class="list-group-item">
-              <b>Interes</b> <a class="float-right">{{=info.asignacion_piscina_interes}}</a>
+              <b>Tasa</b> <a class="float-right">{{=info.asignacion_piscina_interes}}</a>
+            </li>
+            <li class="list-group-item">
+              <b>Telefono</b> <a class="float-right">{{=info.asignacion_piscina_telefono}}</a>
             </li>
           </ul>
-
-          <a href="#!" class="btn btn-primary btn-block"><b>Llamar</b></a>
+          <a href="javascript:aseInt.gestion({{=varsData.idRegistro}});" class="btn btn-primary btn-block"><b>Tipificar</b></a>
         </div>
       </div>
     </div>
@@ -32,8 +34,8 @@
       <div class="card">
         <div class="card-header p-2">
           <ul class="nav nav-pills">
-            <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Actividad</a></li>
-            <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Linea de tiempo</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Guion de venta</a></li>
+            <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Actividad</a></li>
           </ul>
         </div>
         <div class="card-body">

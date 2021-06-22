@@ -16,7 +16,7 @@ def estructuracionBase( idBase ):
             #print('row', row)
             if 'NOMBRE_PRINCIPAL' in row:
                 idRegistro = db.asignacion_piscina.insert(
-                    asignacion_piscina_identificacion  = '',
+                    asignacion_piscina_identificacion  = row['ID_PRINCIPAL'],
                     asignacion_piscina_nombres         = row['NOMBRE_PRINCIPAL'],
                     asignacion_piscina_telefono        = row['TELEFONO_PRINCIPAL_1'],
                     asignacion_piscina_valor           = row['CUPO APROBADO'],
@@ -24,8 +24,10 @@ def estructuracionBase( idBase ):
                     asignacion_piscina_interes         = row['TASA'],
                     asignacion_piscina_cuotas          = row['PLAZO'],
                     asignacion_piscina_oficina         = row['ID_PRINCIPAL'],
+                    asignacion_piscina_observaciones   = row['OBSERVACIONES'],
                     asignacion_piscina_idBase          = idBase,
-                    asignacion_piscina_idAsignacion    = datos.bases_asignacion
+                    asignacion_piscina_idAsignacion    = datos.bases_asignacion,
+                    asignacion_piscina_idSucursal      = sucursalUsuario
                 )
                 resul = 1
                 print('resul1',resul)
@@ -78,6 +80,42 @@ def setAsesorPiscina( idRegistro ):
     )
     asigCount    = db( dbPisAsig.id == idRegistro ).select( dbPisAsig.ALL )
     return asigCount
+
+
+def setInteracion(  data ):
+    dbIntracc      = db.tipificacion
+    dbAsigPisc     = db.asignacion_piscina
+    #dbTipTipf     = db.tipo_tipificacion
+    #tmpIdTipoTip  = db( ( dbTipTipf.tipo_tipificacion_descripcion == str(data.tipificacion).replace(' ','') ) & ( dbTipTipf.tipo_tipificacion_desc_uno == str(data.tipoContacto).replace(' ','') ) &\
+    #( dbTipTipf.tipo_tipificacion_desc_dos == str(data.descripcion).replace(' ','') ) ).select( dbTipTipf.id ).last()
+    #print('tmpIdTipoTip',tmpIdTipoTip)
+    dataInfo   = db( dbAsigPisc.id == int(data.idRegistroVar) ).select( dbAsigPisc.ALL ).last()
+    if dataInfo:
+        print(1)
+        idRegistro = dbIntracc.insert(
+            tipificacion_identificacion_cliente        = dataInfo.asignacion_piscina_identificacion,
+            tipificacion_nombre_cliente                = dataInfo.asignacion_piscina_nombres,
+            tipificacion_telefono                      = dataInfo.asignacion_piscina_telefono ,
+            tipificacion_valor_venta                   = dataInfo.asignacion_piscina_valor,
+            tipificacion_valor_oferta                  = dataInfo.asignacion_piscina_valor,
+            tipificacion_asignacion                    = dataInfo.asignacion_piscina_idAsignacion,
+            tipificacion_campana                       = dataInfo.asignacion_piscina_idCampana,
+            tipificacion_base                          = dataInfo.asignacion_piscina_idBase,
+            tipificacion_resultado_tipo_tipificacion   = str(data.tipificacion).replace(' ',''),
+            tipificacion_resultado_tipo_contacto       = str(data.tipoContacto).replace(' ',''),
+            tipificacion_resultado_descripcion         = str(data.descripcion).replace(' ',''),
+            tipificacion_resultado_otra_descripcion    = str(data.otraDescripcion).replace(' ',''),
+            tipificacion_sucursal                      = sucursalUsuario,
+            tipificacion_asignacion_piscina            = data.idRegistroVar,
+            tipificacion_asesor_id                     = idUser,
+            tipificacion_comentarios                   = data.observaciones
+        )
+        print('idRegistro', idRegistro)
+    else:
+        print(0)
+        idRegistro = 0
+        pass
+    return idRegistro
 
 
 

@@ -23,7 +23,7 @@ def asivamosAsignaciones():
     infoAsigList     = []
     dbAsig           = db.asignaciones
     dbPisAsig        = db.asignacion_piscina
-    infoAsignacones  = db( dbAsig.asignaciones_estado == True ).select( dbAsig.id,dbAsig.asignaciones_nombre )
+    infoAsignacones  = db( (dbAsig.asignaciones_estado == True ) & ( dbAsig.asignaciones_responsable_creacion == idUser ) ).select( dbAsig.id,dbAsig.asignaciones_nombre )
     valAsignado      = 0
     for x_val in infoAsignacones:
         asignados    = db( dbPisAsig.asignacion_piscina_idAsignacion == x_val.id ).select( dbPisAsig.asignacion_piscina_valor,dbPisAsig.asignacion_piscina_telefono,distinct=True)

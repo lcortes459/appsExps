@@ -13,7 +13,11 @@
   <link rel="stylesheet" href="{{=URL('static','template/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <link rel="stylesheet" href="{{=URL('static','template/plugins/daterangepicker/daterangepicker.css')}}">
   <link rel="stylesheet" href="{{=URL('static','template/plugins/summernote/summernote-bs4.min.css')}}">
+  <link rel="shortcut icon" href="{{=URL('static','images/call.jpg')}}" type="image/x-icon">
+  <link rel="apple-touch-icon" href="{{=URL('static','images/call.jpg')}}">
   <link rel="stylesheet" href="{{=URL('static','css/styles.css')}}">
+  {{include 'web2py_ajax.html'}} <!-- this includes jquery.js, calendar.js/.css and web2py.js -->
+  {{block head}}{{end}}
 </head>
 <body class="sidebar-mini layout-fixed sidebar-collapse">
     <div class="wrapper">
@@ -67,29 +71,6 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-cog"></i>
-                                <p>
-                                    Configuración 
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{=URL('base','empleados')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Empleado</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{=URL('base','usuarios')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Usuarios</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-balance-scale-left"></i>
                                 <p>
                                     Operaciones 
@@ -109,10 +90,16 @@
                                     <p>Bases</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <!--li class="nav-item">
                                     <a href="{{=URL('base','campanas')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Campañas</p>
+                                    </a>
+                                </li-->
+                                <li class="nav-item">
+                                    <a href="{{=URL('base','tipificaciones')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Tipificaciones</p>
                                     </a>
                                 </li>
                             </ul>
@@ -123,18 +110,22 @@
         </aside>
         <div class="content-wrapper">
             <div cla_ss="container-fluid">
-            <div class="card card-default" id="cardPrincipal">
-                <div class="card-header header-gw-tablero" id="cardHeaderPrincipal">
-                <b>{{=titulo}}</b>
+                <div class="card card-default" id="cardPrincipal">
+                    <div class="card-header header-gw-tablero" id="cardHeaderPrincipal">
+                        <div class="pull-left" style="float:left;">
+                            <b>{{=titulo}}</b>
+                        </div>
+                        <div class="pull-right" id="subTitleAsesor" style="float:right;"></div>
+                    </div>
+                    <div class="card-body colorAldia" id="cardBodyPrincipal">
+                        <div class="col-12">
+                            {{include}}
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body colorAldia" id="cardBodyPrincipal">
-                <div class="col-12">
-                    {{include}}
-                </div>
-                </div>
-            </div>
             </div>
         </div>
+        
     </div>
     <!-- Inicio modal cargue archivo cofiguracion -->
     <div class="modal fade" id="modalCargueArchivo">

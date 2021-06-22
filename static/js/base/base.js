@@ -5,7 +5,7 @@ var bsa = {
 	},
 
 	ready: function() {
-		$('#idListadoProyectosCarguesTable').DataTable({
+		$('#basesAsignaciones,#guionesAsignaciones').DataTable({
 			"order": [[ 0, "asc" ]]
 		});
 
@@ -107,6 +107,15 @@ var bsa = {
 		$('#idHeaderModal').html(tmp);
 		$('#modalCargueArchivo').modal('show');
 	},
+    basesAsignacion: function(idAsignacion){
+        template.showPreloader('Un momento por favor..');
+        $('#idDivAsigPrincipal').hide();
+        $('#basesAsignacion').show();
+        $('#basesAsignacion').load('basesAsignacion',{idAsignacion: idAsignacion},function(){
+            $('#subTitleAsesor').html(`<a href="javascript:template.regresarGnrl('basesAsignacion','idDivAsigPrincipal');" title="Regresar a listado"><i class="fa fa-arrow-left"" style="font-size:1em;"></i>`);
+            template.hidePreloader();
+        }); 
+    },
 };
 
 bsa.start();

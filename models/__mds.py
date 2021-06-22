@@ -39,7 +39,7 @@ def db_tableAsiganciones():
         Field('asignaciones_codigo', represent= lambda icono, r: creacionCodigo(r.id,r.asignaciones_nombre)),
         Field('asignaciones_nombre'),
         Field('asignaciones_estado',default=True),
-        Field('asignaciones_responsable_creacion'),
+        Field('asignaciones_responsable_creacion', 'integer'),
         Field('asignaciones_fecha_creacion' , 'integer' ,default=fechaIntModels, represent= lambda icono, r: fechaFormato(r.asignaciones_fecha_creacion,'fecha')),
         Field('asignaciones_hora_creacion' , 'integer',default=horaIntModels),
         Field('asignaciones_fecha_inicio' , 'integer',default=fechaIntModels, represent= lambda icono, r: fechaFormato(r.asignaciones_fecha_inicio,'fecha')),
@@ -54,14 +54,54 @@ def db_tableAsiganciones():
     db.asignaciones._enable_record_versioning()
     pass
 
-def db_tableBaes():
+def db_tableGuiones():
     if not hasattr(db,'asignaciones'):
         db_tableAsiganciones()
+    db.define_table('guiones',
+        Field('guiones_asignacion' ,'reference asignaciones',label='Asignación'),
+        Field('guiones_sucursal','integer'),
+        Field('guiones_codigo'),
+        Field('guiones_nombre'),
+        Field('guiones_responsable_creacion'),
+        Field('guiones_estado',defaul=True),
+        Field('guiones_fecha_creacion' , 'integer' ,default=fechaIntModels),
+        Field('guiones_hora_creacion' , 'integer',default=horaIntModels),
+    )
+    db.guiones.id.readable =  db.guiones.id.writable = False
+    db.guiones.guiones_fecha_creacion.readable =  db.guiones.guiones_fecha_creacion.writable = False
+    db.guiones.guiones_estado.readable =  db.guiones.guiones_estado.writable = False
+    db.guiones.guiones_hora_creacion.readable =  db.guiones.guiones_hora_creacion.writable = False
+    db.guiones.guiones_responsable_creacion.readable =  db.guiones.guiones_responsable_creacion.writable = False
+    db.guiones._enable_record_versioning()
+    pass
+
+
+def db_tableGuionesAsig():
+    if not hasattr(db,'guiones'):
+        db_tableGuiones()
+    db.define_table('guionesAsignaciones',
+        Field('gnsAsig_asignacion' ,'reference asignaciones'),
+        Field('ggnsAsig_guion','reference guiones',),
+        Field('gnsAsig_estado',defaul=True),
+        Field('gnsAsig_fecha_creacion' , 'integer' ,default=fechaIntModels),
+        Field('gnsAsig_hora_creacion' , 'integer',default=horaIntModels),
+    )
+    db.guionesAsignaciones.id.readable =  db.guionesAsignaciones.id.writable = False
+    db.guionesAsignaciones.gnsAsig_estado.readable =  db.guionesAsignaciones.gnsAsig_estado.writable = False
+    db.guionesAsignaciones.gnsAsig_fecha_creacion.readable =  db.guionesAsignaciones.gnsAsig_fecha_creacion.writable = False
+    db.guionesAsignaciones.gnsAsig_hora_creacion.readable =  db.guionesAsignaciones.gnsAsig_hora_creacion.writable = False
+    db.guionesAsignaciones._enable_record_versioning()
+    pass
+
+def db_tableBaes():
+    if not hasattr(db,'guionesAsignaciones'):
+        db_tableGuionesAsig()
     db.define_table('bases', 
         Field('bases_asignacion' ,'reference asignaciones',label='Asignación'),
         Field('bases_base','upload',label='Registros base', represent= lambda bases_base, r: XML("""<div style="text-align: center"> <i class="far fa-file-excel text-success" aria-hidden="true"></i></div>""" )),
         #Field('bases_demo','upload',label='Registros demograficos', represent= lambda bases_demo, r: XML("""<div style="text-align: center"><i class="far fa-file-excel text-success" aria-hidden="true"></i></div>""" )),
         Field('bases_nombre'),
+        Field('base_segmento', 'list:string', widget=SQLFORM.widgets.radio.widget),
         Field('bases_estado',default='En proceso',label='Estado base', represent= lambda bases_estado, r: XML("""<div style="text-align: center"><span class="right badge badge-primary">"""+str(r.bases_estado)+"""</span></div>""" )),
         Field('bases_responsable_creacion'),
         Field('bases_fecha_creacion' , 'integer' ,default=fechaIntModels),
@@ -75,6 +115,10 @@ def db_tableBaes():
     db.bases.bases_hora_creacion.readable =  db.bases.bases_hora_creacion.writable = False
     db.bases.bases_nombre.readable =  db.bases.bases_nombre.writable = False
     db.bases.bases_responsable_creacion.readable =  db.bases.bases_responsable_creacion.writable = False
+    db.bases.base_segmento.requires = [
+        IS_IN_SET(('Libre inversión','Tarjeta de crédito')),
+        IS_NOT_EMPTY(error_message='Debe seleccionar un segmento'),
+    ]
     db.bases._enable_record_versioning()
     pass
 
@@ -119,7 +163,6 @@ def db_tableAsinacionHistory():
     db.asignacion_historico._enable_record_versioning()
     pass
 
-
 def db_tableAsinacionPiscina():
     if not hasattr(db,'asignacion_historico'):
         db_tableAsinacionHistory()
@@ -136,6 +179,7 @@ def db_tableAsinacionPiscina():
         Field('asignacion_piscina_fecha_creacion' , 'integer' ,default=fechaIntModels),
         Field('asignacion_piscina_hora_creacion' , 'integer',default=horaIntModels),
         Field('asignacion_piscina_idAsignacion', 'integer'),
+        Field('asignacion_piscina_idSucursal', 'integer'),
         Field('asignacion_piscina_idBase', 'integer'),
         Field('asignacion_piscina_idCampana', 'integer',default=0),
         Field('asignacion_piscina_dia','integer',default=fechaIntergar('dia')),
@@ -196,14 +240,21 @@ def db_tableVentas():
 def db_tableTipoTipificacion():
     if not hasattr(db,'ventas'):
         db_tableVentas() 
-    db.define_table('tipo_tipificacion', 
-        Field('tipo_tipificacion_id_resultado'),
+    db.define_table('tipo_tipificacion',
         Field('tipo_tipificacion_orden'),
         Field('tipo_tipificacion_estado',default=True),
-        Field('tipo_tipificacion_descripcion'),
+        Field('tipo_tipificacion_descripcion',label="Tipo tipificacion"),
+        Field('tipo_tipificacion_desc_uno',label="Tipo contacto"),
+        Field('tipo_tipificacion_desc_dos',label="Descripcion"),
+        Field('tipo_tipificacion_desc_tres',label="Otra descripcion", default='N/A'),
         Field('tipo_tipificacion_fecha_creacion','integer' ,default=fechaIntModels),
         Field('tipo_tipificacion_hora_creacion','integer',default=horaIntModels),
     )
+    db.tipo_tipificacion.id.readable =  db.tipo_tipificacion.id.writable = False
+    db.tipo_tipificacion.tipo_tipificacion_orden.readable =  db.tipo_tipificacion.tipo_tipificacion_orden.writable = False
+    db.tipo_tipificacion.tipo_tipificacion_estado.readable =  db.tipo_tipificacion.tipo_tipificacion_estado.writable = False
+    db.tipo_tipificacion.tipo_tipificacion_fecha_creacion.readable =  db.tipo_tipificacion.tipo_tipificacion_fecha_creacion.writable = False
+    db.tipo_tipificacion.tipo_tipificacion_hora_creacion.readable =  db.tipo_tipificacion.tipo_tipificacion_hora_creacion.writable = False
     db.tipo_tipificacion._enable_record_versioning()
     pass
     
@@ -211,27 +262,43 @@ def db_tableTipificaciones():
     if not hasattr(db,'tipo_tipificacion'):
         db_tableTipoTipificacion()  
     db.define_table('tipificacion', 
-        Field('tipificacion_identificacion_cliente'),
-        Field('tipificacion_nombre_cliente'),
-        Field('tipificacion_telefono'),
-        Field('tipificacion_resultado','reference tipo_tipificacion'),
-        Field('tipificacion_descripcion_resultado','text'),
+        Field('tipificacion_identificacion_cliente',label='Identificacion'),
+        Field('tipificacion_nombre_cliente',label='Nombres'),
+        Field('tipificacion_telefono',label='Telefono'),
+        Field('tipificacion_resultado_tipo_tipificacion','text',label='Tipificación'),
+        Field('tipificacion_resultado_tipo_contacto','text',label='Tipo contacto'),
+        Field('tipificacion_resultado_descripcion','text',label='Descripcion tip.'),
+        Field('tipificacion_resultado_otra_descripcion','text',label='Otra tip.'),
         Field('tipificacion_numero_producto','text'),
-        Field('tipificacion_valor_venta','double', default=0),
+        Field('tipificacion_valor_venta','double', default=0,label='Valor oferta'),
         Field('tipificacion_valor_oferta','double', default=0),
         Field('tipificacion_sucursal','integer'),
         Field('tipificacion_asignacion','integer'),
         Field('tipificacion_campana','integer'),
         Field('tipificacion_base','integer'),
-        Field('tipificacion_asignacion_historico','reference asignacion_historico'),
-        Field('tipificacion_asesor_id','integer'),
-        Field('tipificacion_fecha_creacion','integer' ,default=fechaIntModels),
-        Field('tipificacion_hora_creacion','integer',default=horaIntModels),
-        Field('tipificacion_comentarios','text'),
+        Field('tipificacion_asignacion_piscina','integer'),
+        Field('tipificacion_asesor_id','integer',label='Asesor'),
+        Field('tipificacion_fecha_creacion','integer' ,default=fechaIntModels,label='Fecha'),
+        Field('tipificacion_hora_creacion','integer',default=horaIntModels,label='Hora'),
+        Field('tipificacion_comentarios','text',label='Comentarios'),
         Field('tipificacion_dia','integer',default=fechaIntergar('dia')),
         Field('tipificacion_mes','integer',default=fechaIntergar('mes')),
         Field('tipificacion_anio','integer',default=fechaIntergar('anio'))
     )
+    db.tipificacion.id.readable =  db.tipificacion.id.writable = False
+    db.tipificacion.tipificacion_campana.readable =  db.tipificacion.tipificacion_campana.writable = False
+    db.tipificacion.tipificacion_numero_producto.readable =  db.tipificacion.tipificacion_numero_producto.writable = False
+    db.tipificacion.tipificacion_sucursal.readable =  db.tipificacion.tipificacion_sucursal.writable = False
+    db.tipificacion.tipificacion_valor_oferta.readable =  db.tipificacion.tipificacion_valor_oferta.writable = False
+    db.tipificacion.tipificacion_asignacion.readable =  db.tipificacion.tipificacion_asignacion.writable = False
+    db.tipificacion.tipificacion_campana.readable =  db.tipificacion.tipificacion_campana.writable = False
+    db.tipificacion.tipificacion_base.readable =  db.tipificacion.tipificacion_base.writable = False
+    db.tipificacion.tipificacion_asignacion_piscina.readable =  db.tipificacion.tipificacion_asignacion_piscina.writable = False
+    db.tipificacion.tipificacion_dia.readable =  db.tipificacion.tipificacion_dia.writable = False
+    db.tipificacion.tipificacion_mes.readable =  db.tipificacion.tipificacion_mes.writable = False
+    db.tipificacion.tipificacion_anio.readable =  db.tipificacion.tipificacion_anio.writable = False
+    #db.tipificacion.tipificacion_hora_creacion.readable =  db.tipificacion.tipificacion_hora_creacion.writable = False
+    #db.tipificacion.tipificacion_hora_creacion.readable =  db.tipificacion.tipo_tipificacion_hora_creacion.writable = False
     db.tipificacion._enable_record_versioning()
     pass
 

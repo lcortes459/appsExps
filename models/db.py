@@ -147,6 +147,15 @@ db.empleados.empleados_hora_creacion.readable   =  db.empleados.empleados_hora_c
 db.empleados.empleados_observaciones.readable   =  db.empleados.empleados_observaciones.writable = False
 db.empleados.empleados_sucursal.readable        =  db.empleados.empleados_sucursal.writable = False
 
+db.empleados.empleados_email.readable        =  db.empleados.empleados_email.writable = False
+db.empleados.empleados_direccion_recidencia.readable        =  db.empleados.empleados_direccion_recidencia.writable = False
+db.empleados.empleados_telefono_emergancia.readable        =  db.empleados.empleados_telefono_emergancia.writable = False
+db.empleados.empleados_contacto_emergancia.readable        =  db.empleados.empleados_contacto_emergancia.writable = False
+db.empleados.empleados_fecha_nacimiento.readable        =  db.empleados.empleados_fecha_nacimiento.writable = False
+db.empleados.empleados_fecha_ingreso.readable        =  db.empleados.empleados_fecha_ingreso.writable = False
+db.empleados.empleados_observaciones.readable        =  db.empleados.empleados_observaciones.writable = False
+db.empleados.empleados_parentesco_emergancia.readable        =  db.empleados.empleados_parentesco_emergancia.writable = False
+
 db.empleados.empleados_fecha_ingreso.readable = False
 db.empleados.empleados_fecha_nacimiento.readable = False
 db.empleados.empleados_parentesco_emergancia.readable = False

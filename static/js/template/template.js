@@ -1,3 +1,4 @@
+var tipificacion;
 var template = {
     stars: function() {
         this.carga()
@@ -132,21 +133,7 @@ var template = {
 	    return amount_parts.join('.');
     },
     asigEmpleado: function(usu){
-        $('#asignarEmpleado_'+usu).load('empleados',{usu: usu});    
-    },
-    basesAsignacion: function(idAsignacion){
-        /*$('#basesAsignacion').load('basesAsignacion',{idAsignacion: idAsignacion},function(){
-            $('idDivAsigPrincipal').hide();
-        });*/
-        var tmp = `
-        	<h4 class="modal-title"><b>Asignacion 1</b></h4>
-	      	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		      <span aria-hidden="true">&times;</span>
-	      	</button>
-        `;
-        $('#infoProyectoSubirArchivo').html('Asignacion 1');
-		$('#idHeaderModal').html(tmp);
-		$('#modalCargueArchivo').modal('show');
+        $('#asignarEmpleado_'+usu).load('empleadosAsig',{usu: usu});    
     },
     asignarEmpleado: function(usu,empl) {
         
@@ -285,6 +272,11 @@ var template = {
                 });
             }
         });
+    },
+    regresarGnrl:function( hide,show ){
+        $('#'+hide+'').hide();
+        $('#'+show+'').show();
+        $('#subTitleAsesor').html('');
     },
 };
 template.stars();

@@ -18,19 +18,19 @@ def getEmpladoAsigar(id):
 	return resul
 
 def getBasesCargar(id):
-	dbBasAsig      = db.bases_asignacion
-	cabtBasesAsig  = db( dbBasAsig.bases_asignacion_asignacion == id ).count()
+	dbBasAsig      = db.bases
+	cabtBasesAsig  = db( dbBasAsig.bases_asignacion == id ).count()
 	if cabtBasesAsig > 0:
 		resul = XML("""<a href="#!" 
 						  class="btn btn-primary btn-block"
-						  onclick="template.basesAsignacion("""+str(id)+""");" 
+						  onclick="bsa.basesAsignacion("""+str(id)+""");" 
 					><b>"""+str(cabtBasesAsig)+"""</b></span>""")
 	else:
 		resul = XML("""
 			<a 	href="#!" 
 				class="btn btn-block btn-danger" 
-				onclick="template.basesAsignacion("""+str(id)+""");"
-			>Agregar</a>
+				onclick="bsa.basesAsignacion("""+str(id)+""");"
+			>Configurar</a>
 		""")
 		pass
 	return resul
@@ -69,6 +69,20 @@ def allUsuarios():
 
 	) 
 	return locals()
+
+
+def empleadosAsig():
+	multiData          = request.vars
+	multi_dbEmpleados  = db.empleados
+	empleados          = db( multi_dbEmpleados.empleados_estado == True ).select(multi_dbEmpleados.id,multi_dbEmpleados.empleados_nombres)
+	return locals()
+
+
+def cerrarAsigEmpl():
+	multi_data        = request.vars
+	multi_res         = 'error'
+	multi_res         = getEmpladoAsigar(multi_data.usu)
+	return multi_res
 
 
 @auth.requires_login()
@@ -132,7 +146,7 @@ def usuarios():
 
 	usuarios             = SQLFORM.grid(
 		query,
-		deletable        = False,
+		deletable        = True,
 		details          = False,
 		csv              = False,
 		maxtextlength    = 150,
@@ -178,7 +192,7 @@ def sucursales():
 	query                    = ( dbSucur.id > 0 )
 	sucursales              = SQLFORM.grid(
 		dbSucur,
-			deletable        = False,
+			deletable        = True,
 			details          = False,
 			csv              = False,
 			maxtextlength    = 50,
@@ -196,20 +210,20 @@ def asignaciones():
 	titulo                   = T("Listado Asignaciones")
 	dbasignac                = db.asignaciones
 	links = [
-		dict(header='Bases', body=lambda r: DIV( getBasesCargar(r.id), _id='agregarBases_%s' %r.id ) )
+		dict(header='Configuraciones', body=lambda r: DIV( getBasesCargar(r.id), _id='agregarBases_%s' %r.id ) )
 	]
 	if grup==['Coordinador']:
 		dbasignac.asignaciones_responsable_creacion.default  = idUser
 		dbasignac.asignaciones_sucursal.default              = sucursalUsuario
 		dbasignac.asignaciones_responsable_creacion.readable =  dbasignac.asignaciones_responsable_creacion.writable = False
 		dbasignac.asignaciones_sucursal.readable             =  dbasignac.asignaciones_sucursal.writable = False
-		query                    = ( dbasignac.asignaciones_responsable_creacion == idUser )
+		query                                                = ( dbasignac.asignaciones_responsable_creacion == idUser )
 	else:
 		query                    = ( dbasignac.id > 0 )
 		pass
 
 	asignaciones             = SQLFORM.grid(
-		dbasignac,
+		query,
 			deletable        = False,
 			details          = False,
 			csv              = False,
@@ -280,6 +294,25 @@ def bases():
         )
     return locals()
 
+@auth.requires_login()
+def tipificaciones():
+    response.title           = T("bases")    
+    titulo                   = T("Listado tipificaciones")
+    dbTTipo                  = db.tipo_tipificacion
+    links                    = []
+	#dbSqlQuery              = ( dbTTipo.tipo_tipificacion_estado )
+    tipificaciones           = SQLFORM.grid(
+        dbTTipo,
+            deletable        = False,
+            details          = False,
+            csv              = False,
+            maxtextlength    = 50,
+            editable         = True,
+            paginate         = 100,
+            links            = links,
+            orderby          = dbTTipo.id
+        )
+    return locals()
 
 
 @auth.requires_login()
