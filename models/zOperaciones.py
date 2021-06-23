@@ -12,13 +12,14 @@ def estructuracionBase( idBase ):
         #print('dest_filename', dest_filename)
         dfOri        = pd.read_excel(dest_filename)
         resul        = 0
+        print('dfOri',dfOri.head())
         if datos.base_segmento == 'Libre inversión':
             dfOri.drop_duplicates(subset=['ID_PRINCIPAL','TELEFONO_PRINCIPAL_1'],inplace=True)
         else:
-            dfOri.drop_duplicates(subset=[1,3,6,9,12,13],inplace=True)
+            dfOri.drop_duplicates(subset=['NUM_DOC','TELEFONO_1','TELEFONO_3','TELEFONO_3','CEL_1','CEL_2'],inplace=True)
             pass
         for index, row in dfOri.iterrows():
-            #print('row', row)
+            #print('row', str(row['2']))
             if datos.base_segmento == 'Libre inversión':
                 if 'ID_PRINCIPAL' in row:
                     idRegistro = db.asignacion_piscina.insert(
@@ -41,7 +42,7 @@ def estructuracionBase( idBase ):
                     resul = 0
                     pass
             else:
-                if row[1] != '':
+                if 'NUM_DOC' in row:
                     """
                         TIP_DOC	           0
                         NUM_DOC            1
@@ -65,28 +66,28 @@ def estructuracionBase( idBase ):
                         OBSERVACIONES      19
                     """
                     idRegistro = db.asignacion_piscina.insert(
-                        asignacion_piscina_tipo_identiifcacion = row[0],
-                        asignacion_piscina_identificacion      = row[1],
-                        asignacion_piscina_nombres             = row[2],
-                        asignacion_piscina_telefono            = row[3],
-                        asignacion_piscina_valor               = row[16],
+                        asignacion_piscina_tipo_identiifcacion = row['TIP_DOC'],
+                        asignacion_piscina_identificacion      = row['NUM_DOC'],
+                        asignacion_piscina_nombres             = row['NOM_COMPLETO'],
+                        asignacion_piscina_telefono            = row['TELEFONO_1'],
+                        asignacion_piscina_valor               = row['CUPO_APROBADO'],
                         asignacion_piscina_cuidad              = '',
-                        asignacion_piscina_interes             = row[18],
-                        asignacion_piscina_cuotas              = row[17],
+                        asignacion_piscina_interes             = row['TASA MV'],
+                        asignacion_piscina_cuotas              = row['PLAZO'],
                         asignacion_piscina_oficina             = '',
-                        asignacion_piscina_observaciones       = row[19],
-                        asignacion_piscina_origen              = row[15],
-                        asignacion_piscina_autoriza            = row[14],
+                        asignacion_piscina_observaciones       = row['OBSERVACIONES'],
+                        asignacion_piscina_origen              = row['ORIGEN'],
+                        asignacion_piscina_autoriza            = row['AUTORIZA TTO DATOS (SI/NO)'],
                         asignacion_piscina_idBase              = idBase,
                         asignacion_piscina_idAsignacion        = datos.bases_asignacion,
                         asignacion_piscina_idSucursal          = sucursalUsuario
                     )
                     
-                    tel1 = cargueTelefonos( idRegistro,row[3],row[4],row[5] )
-                    tel2 = cargueTelefonos( idRegistro,row[6],row[7],row[8] )
-                    tel3 = cargueTelefonos( idRegistro,row[9],row[10],row[11] )
-                    tel4 = cargueTelefonos( idRegistro,row[12],0,0 )
-                    tel5 = cargueTelefonos( idRegistro,row[13],0,0 )
+                    tel1 = cargueTelefonos( idRegistro,row['TELEFONO_1'],row['COD_CIUDAD_1'],row['DEPARTAMENTO'] )
+                    tel2 = cargueTelefonos( idRegistro,row['TELEFONO_2'],row['COD_CIUDAD_2'],row['DEPARTAMENTO'] )
+                    tel3 = cargueTelefonos( idRegistro,row['TELEFONO_3'],row['COD_CIUDAD_3'],row['DEPARTAMENTO'] )
+                    tel4 = cargueTelefonos( idRegistro,row['CEL_1'],0,0 )
+                    tel5 = cargueTelefonos( idRegistro,row['CEL_2'],0,0 )
                     resul = 1
                     print('resul1',resul)
                 else:
@@ -115,15 +116,17 @@ def cargueTelefonos( idRegistro,telefono,codigoCuidad,codigoDep ):
     else:
         tipoTel = 'Desconocido'
         pass
-    idRegTelefono = db.asignPisTelefono.insert(
-        asig_pisc_tel_asignacion_piscina             = idRegistro,
-        asig_pisc_tel_asignacion_telefono            = telefono,
-        asig_pisc_tel_asignacion_codigo_cuidad       = codigoCuidad,
-        asig_pisc_tel_asignacion_codigo_departamento = codigoDep,
-        asig_pisc_tel_asignacion_tipo_telefono       = tipoTel
-    )
-    if idRegTelefono:
-        resul = idRegTelefono
+    if telefono:
+        idRegTelefono = db.asignPisTelefono.insert(
+            asig_pisc_tel_asignacion_piscina             = idRegistro,
+            asig_pisc_tel_asignacion_telefono            = telefono,
+            asig_pisc_tel_asignacion_codigo_cuidad       = codigoCuidad,
+            asig_pisc_tel_asignacion_codigo_departamento = codigoDep,
+            asig_pisc_tel_asignacion_tipo_telefono       = tipoTel
+        )
+        if idRegTelefono:
+            resul = idRegTelefono
+            pass
         pass
     return resul
 
@@ -149,6 +152,15 @@ def getAsesorPiscina():
         pass
     return resul
 
+def setTelefonos( idRegistro ):
+    dbTels     = db.asignPisTelefono
+    tels       = db( dbTels.asig_pisc_tel_asignacion_piscina == idRegistro ).select( dbTels.ALL )
+    if tels:
+        resul = tels
+    else:
+        resul = 0
+        pass
+    return resul
 
 def setAsesorPiscina( idRegistro ):
     dbPisAsig    = db.asignacion_piscina

@@ -1,0 +1,930 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.KeyError'> 'id'"
+p3
+sS'layer'
+p4
+S'/home/www-data/web2py/applications/PonosCRM/controllers/base.py'
+p5
+sS'code'
+p6
+S'<code object <module> at 0x7fa4bc1490b0, file "/home/www-data/web2py/applications/PonosCRM/controllers/base.py", line 2>'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__getslice__'
+p12
+S"<method-wrapper '__getslice__' of exceptions.KeyError object>"
+p13
+sS'__str__'
+p14
+S"<method-wrapper '__str__' of exceptions.KeyError object>"
+p15
+sS'__reduce__'
+p16
+S'<built-in method __reduce__ of exceptions.KeyError object>'
+p17
+sS'__dict__'
+p18
+S'{}'
+p19
+sS'message'
+p20
+S"'id'"
+p21
+sS'__sizeof__'
+p22
+S'<built-in method __sizeof__ of exceptions.KeyError object>'
+p23
+sS'__init__'
+p24
+S"<method-wrapper '__init__' of exceptions.KeyError object>"
+p25
+sS'__setattr__'
+p26
+S"<method-wrapper '__setattr__' of exceptions.KeyError object>"
+p27
+sS'__reduce_ex__'
+p28
+S'<built-in method __reduce_ex__ of exceptions.KeyError object>'
+p29
+sS'__new__'
+p30
+S'<built-in method __new__ of type object>'
+p31
+sS'__format__'
+p32
+S'<built-in method __format__ of exceptions.KeyError object>'
+p33
+sS'__class__'
+p34
+S"<type 'exceptions.KeyError'>"
+p35
+sS'__doc__'
+p36
+S"'Mapping key not found.'"
+p37
+sS'__getitem__'
+p38
+S"<method-wrapper '__getitem__' of exceptions.KeyError object>"
+p39
+sS'__setstate__'
+p40
+S'<built-in method __setstate__ of exceptions.KeyError object>'
+p41
+sS'__getattribute__'
+p42
+S"<method-wrapper '__getattribute__' of exceptions.KeyError object>"
+p43
+sS'args'
+p44
+S"('id',)"
+p45
+sS'__subclasshook__'
+p46
+S'<built-in method __subclasshook__ of type object>'
+p47
+sS'__unicode__'
+p48
+S'<built-in method __unicode__ of exceptions.KeyError object>'
+p49
+sS'__delattr__'
+p50
+S"<method-wrapper '__delattr__' of exceptions.KeyError object>"
+p51
+sS'__repr__'
+p52
+S"<method-wrapper '__repr__' of exceptions.KeyError object>"
+p53
+sS'__hash__'
+p54
+S"<method-wrapper '__hash__' of exceptions.KeyError object>"
+p55
+ssS'evalue'
+p56
+S"'id'"
+p57
+sS'request'
+p58
+cgluon.html
+XML_unpickle
+p59
+(S's\x81v\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>PonosCRM</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>edit</div></td></tr><tr><td><div>auth_user</div></td></tr><tr><td><div>44</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>190.146.244.91</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>base</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_admin</td><td style="vertical-align:top;">:</td><td><div>190.26.136.246-6ddd04b3-2534-4c10-84d8-369f9ffcf92c<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">samesite</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_ponoscrm</td><td style="vertical-align:top;">:</td><td><div>190.146.244.91-8814379f-f68e-477b-942c-8189e4acffba<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">samesite</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">CONTENT_LENGTH</td><td style="vertical-align:top;">:</td><td><div>995</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">CONTENT_TYPE</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundaryWXCLJpC51pRyRAfw</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">CONTEXT_DOCUMENT_ROOT</td><td style="vertical-align:top;">:</td><td><div>/var/www/html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">CONTEXT_PREFIX</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">DOCUMENT_ROOT</td><td style="vertical-align:top;">:</td><td><div>/var/www/html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">GATEWAY_INTERFACE</td><td style="vertical-align:top;">:</td><td><div>CGI/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>es-xl</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>session_id_ponoscrm=190.146.244.91-8814379f-f68e-477b-942c-8189e4acffba; session_id_admin=190.26.136.246-6ddd04b3-2534-4c10-84d8-369f9ffcf92c</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>34.121.2.146</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ORIGIN</td><td style="vertical-align:top;">:</td><td><div>https://34.121.2.146</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_REFERER</td><td style="vertical-align:top;">:</td><td><div>https://34.121.2.146/PonosCRM/base/usuarios/edit/auth_user/44?order=auth_user.first_name&amp;_signature=fddd2640c95d13efd047ecb2e4e873fb822ef04b</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/PonosCRM/base/usuarios/edit/auth_user/44</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_TRANSLATED</td><td style="vertical-align:top;">:</td><td><div>/home/www-data/web2py/wsgihandler.py/PonosCRM/base/usuarios/edit/auth_user/44</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div>order=auth_user.first_name&amp;_signature=fddd2640c95d13efd047ecb2e4e873fb822ef04b</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>190.146.244.91</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>52572</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>POST</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_SCHEME</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_URI</td><td style="vertical-align:top;">:</td><td><div>/PonosCRM/base/usuarios/edit/auth_user/44?order=auth_user.first_name&amp;_signature=fddd2640c95d13efd047ecb2e4e873fb822ef04b</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_FILENAME</td><td style="vertical-align:top;">:</td><td><div>/home/www-data/web2py/wsgihandler.py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_ADDR</td><td style="vertical-align:top;">:</td><td><div>10.128.0.2</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_ADMIN</td><td style="vertical-align:top;">:</td><td><div>[no address given]</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>34.121.2.146</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SIGNATURE</td><td style="vertical-align:top;">:</td><td><div>&lt;address&gt;Apache/2.4.18 (Ubuntu) Server at 34.121.2.146 Port 443&lt;/address&gt;\n</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Apache/2.4.18 (Ubuntu)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">apache.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>2</div></td></tr><tr><td><div>4</div></td></tr><tr><td><div>18</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">apache_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>2</div></td></tr><tr><td><div>4</div></td></tr><tr><td><div>18</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/www-data/web2py/applications/welcome&#x27;, &#x27;/home/www-data/web2py/applications/PonosCRM&#x27;, &#x27;/home/www-data/web2py/applications/admin&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/www-data/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">content_length</td><td style="vertical-align:top;">:</td><td><div>995</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">content_type</td><td style="vertical-align:top;">:</td><td><div>multipart/form-data; boundary=----WebKitFormBoundaryWXCLJpC51pRyRAfw</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">context_document_root</td><td style="vertical-align:top;">:</td><td><div>/var/www/html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">context_prefix</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">document_root</td><td style="vertical-align:top;">:</td><td><div>/var/www/html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gateway_interface</td><td style="vertical-align:top;">:</td><td><div>CGI/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/www-data/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>es-xl</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>session_id_ponoscrm=190.146.244.91-8814379f-f68e-477b-942c-8189e4acffba; session_id_admin=190.26.136.246-6ddd04b3-2534-4c10-84d8-369f9ffcf92c</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>34.121.2.146</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_origin</td><td style="vertical-align:top;">:</td><td><div>https://34.121.2.146</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_referer</td><td style="vertical-align:top;">:</td><td><div>https://34.121.2.146/PonosCRM/base/usuarios/edit/auth_user/44?order=auth_user.first_name&amp;_signature=fddd2640c95d13efd047ecb2e4e873fb822ef04b</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_py2</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>crmapps.us-central1-a.c.crm-gestion-316316.internal</div></td></tr><tr><td><div>crmapps</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>34.121.2.146</div></td></tr><tr><td><div>10.128.0.2</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.application_group</td><td style="vertical-align:top;">:</td><td><div>crmapps.us-central1-a.c.crm-gestion-316316.internal|</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.callable_object</td><td style="vertical-align:top;">:</td><td><div>application</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.daemon_connects</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.daemon_restarts</td><td style="vertical-align:top;">:</td><td><div>0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.daemon_start</td><td style="vertical-align:top;">:</td><td><div>1624478367531927</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.enable_sendfile</td><td style="vertical-align:top;">:</td><td><div>0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.handler_script</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.input_chunked</td><td style="vertical-align:top;">:</td><td><div>0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.listener_host</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.listener_port</td><td style="vertical-align:top;">:</td><td><div>443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.process_group</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.queue_start</td><td style="vertical-align:top;">:</td><td><div>1624478367531518</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.request_handler</td><td style="vertical-align:top;">:</td><td><div>wsgi-script</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.request_start</td><td style="vertical-align:top;">:</td><td><div>1624478367531376</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.script_reloading</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.script_start</td><td style="vertical-align:top;">:</td><td><div>1624478367531961</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>4</div></td></tr><tr><td><div>3</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_application_group</td><td style="vertical-align:top;">:</td><td><div>crmapps.us-central1-a.c.crm-gestion-316316.internal|</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_callable_object</td><td style="vertical-align:top;">:</td><td><div>application</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_daemon_connects</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_daemon_restarts</td><td style="vertical-align:top;">:</td><td><div>0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_daemon_start</td><td style="vertical-align:top;">:</td><td><div>1624478367531927</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_enable_sendfile</td><td style="vertical-align:top;">:</td><td><div>0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_handler_script</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_input_chunked</td><td style="vertical-align:top;">:</td><td><div>0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_listener_host</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_listener_port</td><td style="vertical-align:top;">:</td><td><div>443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_process_group</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_queue_start</td><td style="vertical-align:top;">:</td><td><div>1624478367531518</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_request_handler</td><td style="vertical-align:top;">:</td><td><div>wsgi-script</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_request_start</td><td style="vertical-align:top;">:</td><td><div>1624478367531376</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_script_reloading</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_script_start</td><td style="vertical-align:top;">:</td><td><div>1624478367531961</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">mod_wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>4</div></td></tr><tr><td><div>3</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/PonosCRM/base/usuarios/edit/auth_user/44</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_translated</td><td style="vertical-align:top;">:</td><td><div>/home/www-data/web2py/wsgihandler.py/PonosCRM/base/usuarios/edit/auth_user/44</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div>order=auth_user.first_name&amp;_signature=fddd2640c95d13efd047ecb2e4e873fb822ef04b</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>190.146.244.91</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>52572</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>POST</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_scheme</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/PonosCRM/base/usuarios/edit/auth_user/44?order=auth_user.first_name&amp;_signature=fddd2640c95d13efd047ecb2e4e873fb822ef04b</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_filename</td><td style="vertical-align:top;">:</td><td><div>/home/www-data/web2py/wsgihandler.py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_addr</td><td style="vertical-align:top;">:</td><td><div>10.128.0.2</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_admin</td><td style="vertical-align:top;">:</td><td><div>[no address given]</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>34.121.2.146</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>443</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_signature</td><td style="vertical-align:top;">:</td><td><div>&lt;address&gt;Apache/2.4.18 (Ubuntu) Server at 34.121.2.146 Port 443&lt;/address&gt;\n</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Apache/2.4.18 (Ubuntu)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>/home/www-data/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_runtime_handler</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.21.1-stable+timestamp.2020.11.28.04.10.44</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;mod_wsgi.Log object at 0x7fa4bc3f2540&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;type &#x27;mod_wsgi.FileWrapper&#x27;&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;mod_wsgi.Input object at 0x7fa4bb89e830&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;mod_wsgi.Log object at 0x7fa4bc3f2540&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;type &#x27;mod_wsgi.FileWrapper&#x27;&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;mod_wsgi.Input object at 0x7fa4bb89e830&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>/home/www-data/web2py/applications/PonosCRM</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>usuarios</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/www-data/web2py/applications/welcome&#x27;, &#x27;/home/www-data/web2py/applications/PonosCRM&#x27;, &#x27;/home/www-data/web2py/applications/admin&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/www-data/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/www-data/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_py2</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>crmapps.us-central1-a.c.crm-gestion-316316.internal</div></td></tr><tr><td><div>crmapps</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>34.121.2.146</div></td></tr><tr><td><div>10.128.0.2</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_runtime_handler</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.21.1-stable+timestamp.2020.11.28.04.10.44</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_scheduler</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">method</td><td style="vertical-align:top;">:</td><td><div>POST</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2021, 6, 23, 19, 59, 27, 532115)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_args</td><td style="vertical-align:top;">:</td><td><div>edit/auth_user/44</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_extension</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/PonosCRM/base/usuarios/edit/auth_user/44</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2021, 6, 23, 19, 59, 27, 532138)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x7fa4bbb82fd0&gt;</div></td></tr></table></div>'
+tRp60
+sS'frames'
+p61
+(lp62
+(dp63
+S'file'
+p64
+S'/home/www-data/web2py/gluon/restricted.py'
+p65
+sS'dump'
+p66
+(dp67
+S'environment'
+p68
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'pydal.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, ...}"
+p69
+sS'ccode'
+p70
+S'<code object <module> at 0x7fa4bc1490b0, file "/...plications/PonosCRM/controllers/base.py", line 2>'
+p71
+ssS'lnum'
+p72
+I219
+sS'lines'
+p73
+(dp74
+I214
+S'    if environment is None:'
+p75
+sI215
+S'        environment = {}'
+p76
+sI216
+S"    environment['__file__'] = layer"
+p77
+sI217
+S"    environment['__name__'] = '__restricted__'"
+p78
+sI218
+S'    try:'
+p79
+sI219
+S'        exec(ccode, environment)'
+p80
+sI220
+S'    except HTTP:'
+p81
+sI221
+S'        raise'
+p82
+sI222
+S'    except RestrictedError:'
+p83
+sI223
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p84
+ssS'call'
+p85
+S'(ccode=<code object <module> at 0x7fa4bc1490b0, file "/...plications/PonosCRM/controllers/base.py", line 2>, environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'pydal.validators.ANY_OF\'>, \'ASSIGNJS\': <function ASSIGNJS>, \'AppConfig\': <function AppConfig>, \'Auth\': <class \'gluon.tools.Auth\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, ...}, layer=\'/home/www-data/web2py/applications/PonosCRM/controllers/base.py\', scode=<code object <module> at 0x7fa4bc1490b0, file "/...plications/PonosCRM/controllers/base.py", line 2>)'
+p86
+sS'func'
+p87
+S'restricted'
+p88
+sa(dp89
+g64
+S'/home/www-data/web2py/applications/PonosCRM/controllers/base.py'
+p90
+sg66
+(dp91
+sg72
+I338
+sg73
+(dp92
+I327
+S'            deletable        = False,'
+p93
+sI328
+S'            details          = False,'
+p94
+sI329
+S'            csv              = False,'
+p95
+sI330
+S'            maxtextlength    = 50,'
+p96
+sI331
+S'            editable         = True,'
+p97
+sI332
+S'            paginate         = 100,'
+p98
+sI333
+S'            links            = links,'
+p99
+sI334
+S'            orderby          = dbCamp.id'
+p100
+sI335
+S'        )'
+p101
+sI336
+S'    return locals()'
+p102
+ssg85
+S'()'
+p103
+sg87
+S'<module>'
+p104
+sa(dp105
+g64
+S'/home/www-data/web2py/gluon/globals.py'
+p106
+sg66
+(dp107
+S'self'
+p108
+S'undefined'
+p109
+sS'f'
+S'<function usuarios>'
+p110
+ssg72
+I430
+sg73
+(dp111
+I425
+S"        self.flash = ''            # used by the default view layout"
+p112
+sI426
+S'        self.meta = Storage()      # used by web2py_ajax.html'
+p113
+sI427
+S'        self.menu = []             # used by the default view layout'
+p114
+sI428
+S'        self.files = []            # used by web2py_ajax.html'
+p115
+sI429
+S'        self._vars = None'
+p116
+sI430
+S'        self._caller = lambda f: f()'
+p117
+sI431
+S'        self._view_environment = None'
+p118
+sI432
+S'        self._custom_commit = None'
+p119
+sI433
+S'        self._custom_rollback = None'
+p120
+sI434
+S"        self.generic_patterns = ['*']"
+p121
+ssg85
+S'(f=<function usuarios>)'
+p122
+sg87
+S'<lambda>'
+p123
+sa(dp124
+g64
+S'/home/www-data/web2py/gluon/tools.py'
+p125
+sg66
+(dp126
+S'action'
+p127
+S'<function usuarios>'
+p128
+sS'a'
+S'()'
+p129
+sS'b'
+g19
+ssg72
+I3875
+sg73
+(dp130
+I3872
+S'                    current.session.flash = self.messages.access_denied'
+p131
+sI3873
+S'                    return call_or_redirect('
+p132
+sI3874
+S'                        self.settings.on_failed_authorization)'
+p133
+sI3875
+S'                return action(*a, **b)'
+p134
+sI3876
+S'            f.__doc__ = action.__doc__'
+p135
+sI3877
+S'            f.__name__ = action.__name__'
+p136
+sI3878
+S'            f.__dict__.update(action.__dict__)'
+p137
+sI3879
+S'            return f'
+p138
+sI3870
+S'                    flag = condition'
+p139
+sI3871
+S'                if not flag:'
+p140
+ssg85
+S'(*a=(), **b={})'
+p141
+sg87
+S'f'
+sa(dp142
+g64
+S'/home/www-data/web2py/applications/PonosCRM/controllers/base.py'
+p143
+sg66
+(dp144
+S'orderby'
+p145
+g109
+sS'multi_dbUsuarios.id'
+p146
+S'<pydal.objects.Field object>'
+p147
+sS'multi_dbUsuarios'
+p148
+S'<Table auth_user (id, first_name, last_name, ema...y, registration_id, tipo, sucursal, sal_llamada)>'
+p149
+ssg72
+I156
+sg73
+(dp150
+I160
+S''
+sI151
+S'\t\tcsv              = False,'
+p151
+sI152
+S'\t\tmaxtextlength    = 150,'
+p152
+sI153
+S'\t\teditable         = True,'
+p153
+sI154
+S'        paginate         = 100,'
+p154
+sI155
+S'        links            = links,'
+p155
+sI156
+S'\t\torderby          = multi_dbUsuarios.id'
+p156
+sI157
+S''
+sI158
+S'\t)'
+p157
+sI159
+S'\treturn locals()'
+p158
+ssg85
+S'()'
+p159
+sg87
+S'usuarios'
+p160
+sa(dp161
+g64
+S'/home/www-data/web2py/gluon/sqlhtml.py'
+p162
+sg66
+(dp163
+S'builtinnext'
+p164
+S'<built-in function next>'
+p165
+sS'referrer'
+p166
+S"'/PonosCRM/base/usuarios?order=auth_user.first_na...ignature=d89a68531ff0a2f788d18f2f43340d6e94726894'"
+p167
+ssg72
+I2614
+sg73
+(dp168
+I2609
+S'            update_form.process('
+p169
+sI2610
+S'                formname=formname,'
+p170
+sI2611
+S'                onvalidation=onvalidation,'
+p171
+sI2612
+S'                onfailure=onfailure,'
+p172
+sI2613
+S'                onsuccess=onupdate,'
+p173
+sI2614
+S'                next=referrer)'
+p174
+sI2615
+S'            res = DIV(buttons(view=details, record=record),'
+p175
+sI2616
+S'                      update_form, formfooter, _class=_class)'
+p176
+sI2617
+S'            res.create_form = create_form'
+p177
+sI2618
+S'            res.update_form = update_form'
+p178
+ssg85
+S'(query=<Query ("auth_user"."id" > 0)>, fields=[<pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>, <pydal.objects.Field object>], field_id=<pydal.objects.Field object>, left=None, headers={}, orderby=<pydal.objects.Field object>, groupby=None, searchable=True, sortable=True, paginate=100, deletable=True, editable=True, details=False, selectable=None, create=True, csv=False, links=[{\'body\': <function <lambda>>, \'header\': \'Empleado\'}], links_in_grid=True, upload=<function <lambda>>, args=[], user_signature=True, maxtextlengths={}, maxtextlength=150, onvalidation=None, onfailure=None, oncreate=None, onupdate=None, ondelete=None, sorter_icons=(&#x25B2;, &#x25BC;), ui={\'button\': \'button btn btn-default btn-secondary\', \'buttonadd\': \'icon plus icon-plus glyphicon glyphicon-plus\', \'buttonback\': \'icon arrowleft icon-arrow-left glyphicon glyphicon-arrow-left\', \'buttondelete\': \'icon trash icon-trash glyphicon glyphicon-trash\', \'buttonedit\': \'icon pen icon-pencil glyphicon glyphicon-pencil\', \'buttonexport\': \'icon downarrow icon-download glyphicon glyphicon-download\', \'buttontable\': \'icon rightarrow icon-arrow-right glyphicon glyphicon-arrow-right\', \'buttontext\': \'buttontext button\', \'buttonview\': \'icon magnifier icon-zoom-in glyphicon glyphicon-zoom-in\', \'content\': \'\', ...}, showbuttontext=True, _class=\'web2py_grid\', formname=\'web2py_grid\', search_widget=\'default\', advanced_search=True, ignore_rw=False, formstyle=\'bootstrap4_inline\', exportclasses=None, formargs={}, createargs={}, editargs={}, viewargs={}, selectable_submit_button=\'Submit\', buttons_placement=\'right\', links_placement=\'right\', noconfirm=False, cache_count=None, client_side_delete=False, ignore_common_filters=None, auto_pagination=True, use_cursor=False, represent_none=None, showblobs=False)'
+p179
+sg87
+S'grid'
+p180
+sa(dp181
+g64
+S'/home/www-data/web2py/gluon/html.py'
+p182
+sg66
+(dp183
+S'self'
+p184
+S'<gluon.sqlhtml.SQLFORM object>'
+p185
+sS'self.validate'
+p186
+S'<bound method SQLFORM.validate of <gluon.sqlhtml.SQLFORM object>>'
+p187
+sS'kwargs'
+p188
+S"{'dbio': True, 'formname': 'web2py_grid', 'next': '/PonosCRM/base/usuarios?order=auth_user.first_na...ignature=d89a68531ff0a2f788d18f2f43340d6e94726894', 'onfailure': None, 'onsuccess': None, 'onvalidation': None}"
+p189
+ssg72
+I2339
+sg73
+(dp190
+I2336
+S''
+sI2337
+S'        """'
+p191
+sI2338
+S"        kwargs['dbio'] = kwargs.get('dbio', True)  # necessary for SQLHTML forms"
+p192
+sI2339
+S'        self.validate(**kwargs)'
+p193
+sI2340
+S'        return self'
+p194
+sI2341
+S''
+sI2342
+S'    REDIRECT_JS = "window.location=\'%s\';return false"'
+p195
+sI2343
+S''
+sI2334
+S'                return dict(form=SQLFORM(db.table).process(onsuccess=my_callback)'
+p196
+sI2335
+S''
+ssg85
+S"(self=<gluon.sqlhtml.SQLFORM object>, **kwargs={'dbio': True, 'formname': 'web2py_grid', 'next': '/PonosCRM/base/usuarios?order=auth_user.first_na...ignature=d89a68531ff0a2f788d18f2f43340d6e94726894', 'onfailure': None, 'onsuccess': None, 'onvalidation': None})"
+p197
+sg87
+S'process'
+p198
+sa(dp199
+g64
+S'/home/www-data/web2py/gluon/html.py'
+p200
+sg66
+(dp201
+S'self'
+p202
+S'<gluon.sqlhtml.SQLFORM object>'
+p203
+sS'self.accepts'
+p204
+S'<bound method SQLFORM.accepts of <gluon.sqlhtml.SQLFORM object>>'
+p205
+sS'kwargs'
+p206
+S"{'dbio': True, 'formname': 'web2py_grid', 'onvalidation': None, 'request_vars': <Storage {'sal_llamada': '4016', 'first_name': '...ssword': '********', '_formname': 'web2py_grid'}>, 'session': <Storage {'auth': <Storage {'hmac_key': '53db0c4...ature=d89a68531ff0a2f788d18f2f43340d6e94726894'}>}"
+p207
+ssg72
+I2277
+sg73
+(dp208
+I2272
+S"        for key in ('message_onsuccess', 'message_onfailure', 'onsuccess',"
+p209
+sI2273
+S"                    'onfailure', 'next', 'message_onchange', 'onchange'):"
+p210
+sI2274
+S'            if key in kwargs:'
+p211
+sI2275
+S'                del kwargs[key]'
+p212
+sI2276
+S''
+sI2277
+S'        if self.accepts(**kwargs):'
+p213
+sI2278
+S"            if onsuccess == 'flash':"
+p214
+sI2279
+S'                if next:'
+p215
+sI2280
+S'                    current.session.flash = message_onsuccess'
+p216
+sI2281
+S'                else:'
+p217
+ssg85
+S"(self=<gluon.sqlhtml.SQLFORM object>, **kwargs={'dbio': True, 'formname': 'web2py_grid', 'onvalidation': None, 'request_vars': <Storage {'sal_llamada': '4016', 'first_name': '...ssword': '********', '_formname': 'web2py_grid'}>, 'session': <Storage {'auth': <Storage {'hmac_key': '53db0c4...ature=d89a68531ff0a2f788d18f2f43340d6e94726894'}>})"
+p218
+sg87
+S'validate'
+p219
+sa(dp220
+g64
+S'/home/www-data/web2py/gluon/sqlhtml.py'
+p221
+sg66
+(dp222
+S').update'
+p223
+g109
+sS'self'
+p224
+S'<gluon.sqlhtml.SQLFORM object>'
+p225
+sS'self.id_field_name'
+p226
+S"'id'"
+p227
+sS'fields'
+p228
+S"{'email': 'asesortc16@expertos.local', 'first_name': 'asesorTC16', 'id': 44L, 'last_name': '', 'registration_id': '', 'registration_key': '', 'reset_password_key': '', 'sal_llamada': 4016, 'sucursal': 4, 'tipo': ['Asesor']}"
+p229
+ssg72
+I1992
+sg73
+(dp230
+I1987
+S'            elif self.table._db._uri:'
+p231
+sI1988
+S'                if record_id:'
+p232
+sI1989
+S'                    self.vars.id = self.record[self.id_field_name]'
+p233
+sI1990
+S'                    if fields:'
+p234
+sI1991
+S'                        self.table._db(self.table._id == self.record['
+p235
+sI1992
+S'                                       self.id_field_name]).update(**fields)'
+p236
+sI1993
+S'                else:'
+p237
+sI1994
+S'                    self.vars.id = self.table.insert(**fields)'
+p238
+sI1995
+S''
+sI1996
+S'        self.accepted = ret'
+p239
+ssg85
+S"(self=<gluon.sqlhtml.SQLFORM object>, request_vars=<Storage {'sal_llamada': '4016', 'first_name': '...ssword': '********', '_formname': 'web2py_grid'}>, session=<Storage {'auth': <Storage {'hmac_key': '53db0c4...ature=d89a68531ff0a2f788d18f2f43340d6e94726894'}>, formname='web2py_grid', keepvalues=True, onvalidation=None, dbio=True, hideerror=False, detect_record_change=False, **kwargs={})"
+p240
+sg87
+S'accepts'
+p241
+sa(dp242
+g64
+S'/home/www-data/web2py/gluon/packages/dal/pydal/objects.py'
+p243
+sg66
+(dp244
+S'f'
+g109
+sS'self'
+p245
+S'<Set ("auth_user"."id" = 44)>'
+p246
+sS'table._before_update'
+p247
+S'[<function delete_uploaded_files>, <function wrapped>, <function <lambda>>]'
+p248
+sS'builtinany'
+p249
+S'<built-in function any>'
+p250
+sS'table'
+p251
+S'<Table auth_user (id, first_name, last_name, ema...y, registration_id, tipo, sucursal, sal_llamada)>'
+p252
+sS'row'
+p253
+S"<OpRow {'sal_llamada': 4016, 'first_name': 'ases...ord_key': '', 'registration_key': '', 'id': 44L}>"
+p254
+ssg72
+I2699
+sg73
+(dp255
+I2694
+S'        db = self.db'
+p256
+sI2695
+S'        table = db._adapter.get_table(self.query)'
+p257
+sI2696
+S'        row = table._fields_and_values_for_update(update_fields)'
+p258
+sI2697
+S'        if not row._values:'
+p259
+sI2698
+S'            raise ValueError("No fields to update")'
+p260
+sI2699
+S'        if any(f(self, row) for f in table._before_update):'
+p261
+sI2700
+S'            return 0'
+p262
+sI2701
+S'        ret = db._adapter.update(table, self.query, row.op_values())'
+p263
+sI2702
+S'        ret and [f(self, row) for f in table._after_update]'
+p264
+sI2703
+S'        return ret'
+p265
+ssg85
+S'(self=<Set ("auth_user"."id" = 44)>, **update_fields={\'email\': \'asesortc16@expertos.local\', \'first_name\': \'asesorTC16\', \'id\': 44L, \'last_name\': \'\', \'registration_id\': \'\', \'registration_key\': \'\', \'reset_password_key\': \'\', \'sal_llamada\': 4016, \'sucursal\': 4, \'tipo\': [\'Asesor\']})'
+p266
+sg87
+S'update'
+p267
+sa(dp268
+g64
+S'/home/www-data/web2py/gluon/packages/dal/pydal/objects.py'
+p269
+sg66
+(dp270
+S'row'
+p271
+S"<OpRow {'sal_llamada': 4016, 'first_name': 'ases...ord_key': '', 'registration_key': '', 'id': 44L}>"
+p272
+sS'table'
+p273
+g109
+sS'self'
+p274
+S'<Set ("auth_user"."id" = 44)>'
+p275
+sS'f'
+S'<function <lambda>>'
+p276
+sS'builtinany'
+p277
+S'<built-in function any>'
+p278
+ssg72
+I2699
+sg73
+(dp279
+I2694
+S'        db = self.db'
+p280
+sI2695
+S'        table = db._adapter.get_table(self.query)'
+p281
+sI2696
+S'        row = table._fields_and_values_for_update(update_fields)'
+p282
+sI2697
+S'        if not row._values:'
+p283
+sI2698
+S'            raise ValueError("No fields to update")'
+p284
+sI2699
+S'        if any(f(self, row) for f in table._before_update):'
+p285
+sI2700
+S'            return 0'
+p286
+sI2701
+S'        ret = db._adapter.update(table, self.query, row.op_values())'
+p287
+sI2702
+S'        ret and [f(self, row) for f in table._after_update]'
+p288
+sI2703
+S'        return ret'
+p289
+ssg85
+S'((f=<function <lambda>>,))'
+p290
+sg87
+S'<genexpr>'
+p291
+sa(dp292
+g64
+S'/home/www-data/web2py/gluon/packages/dal/pydal/objects.py'
+p293
+sg66
+(dp294
+S'an'
+p295
+S"'auth_user_archive'"
+p296
+sS'fs'
+p297
+S"<OpRow {'sal_llamada': 4016, 'first_name': 'ases...ord_key': '', 'registration_key': '', 'id': 44L}>"
+p298
+sS'db'
+p299
+S'<DAL uri="sqlite://storage.sqlite">'
+p300
+sS'cn'
+p301
+S"'current_record'"
+p302
+sS'qset'
+p303
+S'<Set ("auth_user"."id" = 44)>'
+p304
+ssg72
+I543
+sg73
+(dp305
+I544
+S'            )'
+p306
+sI545
+S'        )'
+p307
+sI546
+S'        if is_active and is_active in fieldnames:'
+p308
+sI547
+S'            self._before_delete.append(lambda qset: qset.update(is_active=False))'
+p309
+sI538
+S'            **d'
+p310
+sI539
+S'        )'
+p311
+sI540
+S''
+sI541
+S'        self._before_update.append('
+p312
+sI542
+S'            lambda qset, fs, db=archive_db, an=archive_name, cn=current_record: archive_record('
+p313
+sI543
+S'                qset, fs, db[an], cn'
+p314
+ssg85
+S'(qset=<Set ("auth_user"."id" = 44)>, fs=<OpRow {\'sal_llamada\': 4016, \'first_name\': \'ases...ord_key\': \'\', \'registration_key\': \'\', \'id\': 44L}>, db=<DAL uri="sqlite://storage.sqlite">, an=\'auth_user_archive\', cn=\'current_record\')'
+p315
+sg87
+g123
+sa(dp316
+g64
+S'/home/www-data/web2py/gluon/packages/dal/pydal/helpers/methods.py'
+p317
+sg66
+(dp318
+S'fields'
+p319
+S"{'email': 'asesortc16@expertos.local', 'first_name': 'asesorTC16', 'last_name': '', 'password': 'pbkdf2(1000,20,sha512)$b713b2220bdf5a24$9dd0628742e7ca085f347cc0e321a5acfaca5892', 'registration_id': '', 'registration_key': '', 'reset_password_key': '', 'sal_llamada': 4016L, 'sucursal': 4L, 'tipo': ['Asesor']}"
+p320
+sS'k'
+S"'id'"
+p321
+sS'v'
+S'44L'
+p322
+ssg72
+I123
+sg73
+(dp323
+I118
+S'    if len(tablenames) != 1:'
+p324
+sI119
+S'        raise RuntimeError("cannot update join")'
+p325
+sI120
+S'    for row in qset.select():'
+p326
+sI121
+S'        fields = archive_table._filter_fields(row)'
+p327
+sI122
+S'        for k, v in iteritems(fs):'
+p328
+sI123
+S'            if fields[k] != v:'
+p329
+sI124
+S'                fields[current_record] = row.id'
+p330
+sI125
+S'                archive_table.insert(**fields)'
+p331
+sI126
+S'                break'
+p332
+sI127
+S'    return False'
+p333
+ssg85
+S'(qset=<Set ("auth_user"."id" = 44)>, fs=<OpRow {\'sal_llamada\': 4016, \'first_name\': \'ases...ord_key\': \'\', \'registration_key\': \'\', \'id\': 44L}>, archive_table=<Table auth_user_archive (current_record, id, fi...y, registration_id, tipo, sucursal, sal_llamada)>, current_record=\'current_record\')'
+p334
+sg87
+S'archive_record'
+p335
+sasS'pyver'
+p336
+S'Python 2.7.12: /usr/bin/python (prefix: /usr)'
+p337
+sS'session'
+p338
+g59
+(S's\xae\t\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">auth</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">expiration</td><td style="vertical-align:top;">:</td><td><div>3600</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">hmac_key</td><td style="vertical-align:top;">:</td><td><div>53db0c41-50c8-490a-bd98-3a350375104d</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_visit</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2021, 6, 23, 19, 58, 48, 146562)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">email</td><td style="vertical-align:top;">:</td><td><div>admin@email.com</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">first_name</td><td style="vertical-align:top;">:</td><td><div>Administrador</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">id</td><td style="vertical-align:top;">:</td><td><div>11L</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_name</td><td style="vertical-align:top;">:</td><td><div>Full</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_id</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_key</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">reset_password_key</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">sal_llamada</td><td style="vertical-align:top;">:</td><td><div>0L</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">sucursal</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">tipo</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>Administrador</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user_groups</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div>'
+tRp339
+sS'etype'
+p340
+S"<type 'exceptions.KeyError'>"
+p341
+sS'date'
+p342
+S'Wed Jun 23 19:59:28 2021'
+p343
+sS'response'
+p344
+g59
+(S'si\x1d\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x7fa4bb184dc0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">botton</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_ponoscrm</td><td style="vertical-align:top;">:</td><td><div>190.146.244.91-8814379f-f68e-477b-942c-8189e4acffba<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">samesite</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>bootstrap4_inline</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">google_analytics_id</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">author</td><td style="vertical-align:top;">:</td><td><div>Your Name &lt;you@example.com&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">description</td><td style="vertical-align:top;">:</td><td><div>a cool new app</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generator</td><td style="vertical-align:top;">:</td><td><div>Web2py Web Framework</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">keywords</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>web2py</div></td></tr><tr><td><div>python</div></td></tr><tr><td><div>framework</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^base/\\w+\\.py$</div></td></tr><tr><td><div>^base/usuarios/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>190.146.244.91</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_ponoscrm</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;/home/www-data/web2py/applications/PonosCRM/sessions/11a/02e/190.146.244.91-8814379f-f68e-477b-942c-8189e4acffba&#x27;, mode &#x27;rb+&#x27; at 0x7fa4bb71e930&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>/home/www-data/web2py/applications/PonosCRM/sessions/190.146.244.91-8814379f-f68e-477b-942c-8189e4acffba</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>b37e9c0f4b36789927ac6d5f6ae97203</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>190.146.244.91-8814379f-f68e-477b-942c-8189e4acffba</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_ponoscrm</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_locked</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>PonosCRM</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">show_toolbar</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">subTitle</td><td style="vertical-align:top;">:</td><td><div>Mis Usuarios</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">title</td><td style="vertical-align:top;">:</td><td><div>Configuraciones | Usuarios</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>base/usuarios.html</div></td></tr></table></div>'
+tRp345
+sS'locals'
+p346
+(dp347
+S'fs'
+p348
+S"<OpRow {'sal_llamada': 4016, 'first_name': 'ases...ord_key': '', 'registration_key': '', 'id': 44L}>"
+p349
+sS'current_record'
+p350
+S"'current_record'"
+p351
+sS'fields'
+p352
+S"{'email': 'asesortc16@expertos.local', 'first_name': 'asesorTC16', 'last_name': '', 'password': 'pbkdf2(1000,20,sha512)$b713b2220bdf5a24$9dd0628742e7ca085f347cc0e321a5acfaca5892', 'registration_id': '', 'registration_key': '', 'reset_password_key': '', 'sal_llamada': 4016L, 'sucursal': 4L, 'tipo': ['Asesor']}"
+p353
+sS'k'
+S"'id'"
+p354
+sS'tablenames'
+p355
+S"{'auth_user': <Table auth_user (id, first_name, last_name, ema...y, registration_id, tipo, sucursal, sal_llamada)>}"
+p356
+sS'v'
+S'44L'
+p357
+sS'row'
+p358
+S'<Row {\'sal_llamada\': 4016L, \'auth_event\': <Set (...ship\': <Set ("auth_membership"."user_id" = 44)>}>'
+p359
+sS'archive_table'
+p360
+S'<Table auth_user_archive (current_record, id, fi...y, registration_id, tipo, sucursal, sal_llamada)>'
+p361
+sS'qset'
+p362
+S'<Set ("auth_user"."id" = 44)>'
+p363
+sssS'traceback'
+p364
+S'Traceback (most recent call last):\n  File "/home/www-data/web2py/gluon/restricted.py", line 219, in restricted\n    exec(ccode, environment)\n  File "/home/www-data/web2py/applications/PonosCRM/controllers/base.py", line 338, in <module>\n  File "/home/www-data/web2py/gluon/globals.py", line 430, in <lambda>\n    self._caller = lambda f: f()\n  File "/home/www-data/web2py/gluon/tools.py", line 3875, in f\n    return action(*a, **b)\n  File "/home/www-data/web2py/applications/PonosCRM/controllers/base.py", line 156, in usuarios\n    orderby          = multi_dbUsuarios.id\n  File "/home/www-data/web2py/gluon/sqlhtml.py", line 2614, in grid\n    next=referrer)\n  File "/home/www-data/web2py/gluon/html.py", line 2339, in process\n    self.validate(**kwargs)\n  File "/home/www-data/web2py/gluon/html.py", line 2277, in validate\n    if self.accepts(**kwargs):\n  File "/home/www-data/web2py/gluon/sqlhtml.py", line 1992, in accepts\n    self.id_field_name]).update(**fields)\n  File "/home/www-data/web2py/gluon/packages/dal/pydal/objects.py", line 2699, in update\n    if any(f(self, row) for f in table._before_update):\n  File "/home/www-data/web2py/gluon/packages/dal/pydal/objects.py", line 2699, in <genexpr>\n    if any(f(self, row) for f in table._before_update):\n  File "/home/www-data/web2py/gluon/packages/dal/pydal/objects.py", line 543, in <lambda>\n    qset, fs, db[an], cn\n  File "/home/www-data/web2py/gluon/packages/dal/pydal/helpers/methods.py", line 123, in archive_record\n    if fields[k] != v:\nKeyError: \'id\'\n'
+p365
+s.

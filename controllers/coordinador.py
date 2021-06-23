@@ -9,13 +9,14 @@ def dashboard():
     dbIntracc               = db.tipificacion
     links = []
     query                   = ( dbIntracc.tipificacion_sucursal == sucursalUsuario )
+    #estructuracionBase(21)
     gestiones               = SQLFORM.grid(
         query,
             deletable        = False,
             details          = False,
             csv              = True,
             maxtextlength    = 50,
-            editable         = True,
+            editable         = False,
             paginate         = 100,
             links            = links,
             orderby          = dbIntracc.id,

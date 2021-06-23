@@ -7,6 +7,7 @@ def dashboard():
     response.subTitle = T("Asi vamos")
     titulo            = T("Dashboard asesor")
     infoAsignaciones  = countAsesorPiscina()
+    #db(db.asignacion_piscina.id >0 ).update( asignacion_piscina_idSucursal = 3 )
     return locals()
 
 
@@ -19,6 +20,7 @@ def buscarRegisto():
 def infoRegistro():
     varsData          = request.vars
     infoReg           = setAsesorPiscina( varsData.idRegistro )
+    telefonos         = setTelefonos( varsData.idRegistro )
     return locals()
 
 
