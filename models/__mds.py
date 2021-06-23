@@ -167,14 +167,20 @@ def db_tableAsinacionPiscina():
     if not hasattr(db,'asignacion_historico'):
         db_tableAsinacionHistory()
     db.define_table('asignacion_piscina', 
+        Field('asignacion_piscina_tipo_identiifcacion','text'),
         Field('asignacion_piscina_identificacion','text'),
         Field('asignacion_piscina_nombres','text'),
         Field('asignacion_piscina_telefono','text'),
         Field('asignacion_piscina_valor','text'),
         Field('asignacion_piscina_cuidad','text'),
+        Field('asignacion_piscina_departamento','text'),
+        Field('asignacion_piscina_departamento_codigo','text'),
+        Field('asignacion_piscina_cuidad_codigo','text'),
         Field('asignacion_piscina_interes','text'),
         Field('asignacion_piscina_cuotas','text'),
         Field('asignacion_piscina_oficina','text'),
+        Field('asignacion_piscina_origen','text'),
+        Field('asignacion_piscina_autoriza','text'),
         Field('asignacion_piscina_estado',default=True),
         Field('asignacion_piscina_fecha_creacion' , 'integer' ,default=fechaIntModels),
         Field('asignacion_piscina_hora_creacion' , 'integer',default=horaIntModels),
@@ -190,11 +196,27 @@ def db_tableAsinacionPiscina():
     db.asignacion_piscina._enable_record_versioning()
     pass
 
-def db_tableAgendas():
+def db_tableAsinPisTelefono():
     if not hasattr(db,'asignacion_piscina'):
         db_tableAsinacionPiscina()
+    db.define_table('asignPisTelefono', 
+        Field('asig_pisc_tel_asignacion_piscina','reference asignacion_piscina'),
+        Field('asig_pisc_tel_asignacion_telefono'),
+        Field('asig_pisc_tel_asignacion_codigo_pais',defaul="57"),
+        Field('asig_pisc_tel_asignacion_codigo_cuidad'),
+        Field('asig_pisc_tel_asignacion_codigo_departamento'),
+        Field('asig_pisc_tel_asignacion_tipo_telefono'),
+        Field('asig_pisc_tel_asignacion_fecha_creacion','integer' ,default=fechaIntModels),
+        Field('asig_pisc_tel_asignacion_hora_creacion', 'integer',default=horaIntModels),
+    )
+    pass
+
+
+def db_tableAgendas():
+    if not hasattr(db,'asignPisTelefono'):
+        db_tableAsinPisTelefono()
     db.define_table('agendas', 
-        Field('agendas_asignacion_historico','reference asignacion_historico'),
+        Field('agendas_asignacion_piscina','reference asignacion_piscina'),
         Field('agendas_sucursal','integer'),
         Field('agendas_campana','integer'),
         Field('agendas_base','integer'),
